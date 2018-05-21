@@ -1,0 +1,31 @@
+<ion-view class="map5_sf" hide-nav-bar="true">
+		<div id="allmap5" ></div>
+		<div class="btn">
+			<div class="btn1" ui-sref="tabs_sf.order_sf.todone_sf">返回</div>
+			<div class="btn2 sj" style="display: none;" ui-sref="workorder_sf">报结</div>
+			<div class="btn2 sj1" style="" ng-click="cancel()">取消订单</div>
+		</div>
+		<div class="message">
+			<div class="person">
+				<div class="img"><img src="{{avatar}}"> </div>
+				<div class="info">
+					<div class="name">
+						<p>{{username}}</p>
+						<p>{{distance}}</p>
+					</div>
+					<div class="comment">
+						<p>{{address}}</p>
+					</div>
+				</div>
+				<a class="icon" href="tel:{{userphone}}"><img src="images/phone.png"> </a>
+			</div>
+			<div class="voice">
+				<i class="icon ion-ios-volume-high"></i>
+				<button class="button" ng-click="play(voice)">单击听取留言</button>
+			</div>
+		</div>
+		<!--<audio id="bgMusic">
+			<source  src="{{radio}}" type="audio/m4a">
+		</audio>-->
+</ion-view>
+

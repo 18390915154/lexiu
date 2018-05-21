@@ -1,0 +1,16 @@
+<ion-view class="bank_manage" view-title="银行卡管理">
+	<ion-content>
+		<div class="all" ng-repeat="bank in banks">
+			<div class="img"><img ng-src="{{bank.img}}"/></div>
+			<div class="nav"><span>{{bank.type}}<br></span><span>{{bank.card}}<br></span><span>*** &nbsp***&nbsp ****{{bank.card_number}}</span></div>
+			<div class="delete" ng-click="delete(bank)" on-reorder="reorder(bank,$fromIndex,$toIndex)">删除</div>
+		</div>
+		<div class="add" ui-sref="add_bank">
+			<div class="sign">
+				<div class="level"></div>
+				<div class="vertical"></div>
+			</div>
+			<h1>添加银行卡</h1>
+		</div>
+	</ion-content>
+</ion-view>

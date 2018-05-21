@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.xiuluo.dao.aboutUs.WithdrawMapper" >
+  <resultMap id="BaseResultMap" type="com.xiuluo.model.aboutUs.Withdraw" >
+    <id column="withdrawid" property="withdrawid" jdbcType="INTEGER" />
+    <result column="persionid" property="persionid" jdbcType="INTEGER" />
+    <result column="monery" property="monery" jdbcType="DECIMAL" />
+    <result column="account" property="account" jdbcType="VARCHAR" />
+    <result column="userorwork" property="userorwork" jdbcType="SMALLINT" />
+    <result column="isok" property="isok" jdbcType="SMALLINT" />
+    <result column="addtime" property="addtime" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    withdrawid, persionid, monery, account,userorwork,isok, addtime
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from t_withdraw
+    where withdrawid = #{withdrawid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from t_withdraw
+    where withdrawid = #{withdrawid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.xiuluo.model.aboutUs.Withdraw" >
+    insert into t_withdraw (withdrawid, persionid, monery, 
+      account,userorwork,isok, addtime)
+    values (#{withdrawid,jdbcType=INTEGER}, #{persionid,jdbcType=INTEGER}, #{monery,jdbcType=DECIMAL}, 
+      #{account,jdbcType=VARCHAR},#{userorwork,jdbcType=SMALLINT},#{isok,jdbcType=SMALLINT},#{addtime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.xiuluo.model.aboutUs.Withdraw" >
+    insert into t_withdraw
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="withdrawid != null" >
+        withdrawid,
+      </if>
+      <if test="persionid != null" >
+        persionid,
+      </if>
+      <if test="monery != null" >
+        monery,
+      </if>
+      <if test="account != null" >
+        account,
+      </if>
+      <if test="userorwork != null" >
+        userorwork,
+      </if>
+      <if test="isok != null" >
+        isok,
+      </if>
+      <if test="addtime != null" >
+        addtime,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="withdrawid != null" >
+        #{withdrawid,jdbcType=INTEGER},
+      </if>
+      <if test="persionid != null" >
+        #{persionid,jdbcType=INTEGER},
+      </if>
+      <if test="monery != null" >
+        #{monery,jdbcType=DECIMAL},
+      </if>
+      <if test="account != null" >
+        #{account,jdbcType=VARCHAR},
+      </if>
+      <if test="userorwork != null" >
+        #{userorwork,jdbcType=SMALLINT},
+      </if>
+      <if test="isok != null" >
+        #{isok,jdbcType=SMALLINT},
+      </if>
+      <if test="addtime != null" >
+        #{addtime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.xiuluo.model.aboutUs.Withdraw" >
+    update t_withdraw
+    <set >
+      <if test="persionid != null" >
+        persionid = #{persionid,jdbcType=INTEGER},
+      </if>
+      <if test="monery != null" >
+        monery = #{monery,jdbcType=DECIMAL},
+      </if>
+      <if test="account != null" >
+        account = #{account,jdbcType=VARCHAR},
+      </if>
+     <if test="userorwork != null" >
+        userorwork = #{userorwork,jdbcType=SMALLINT},
+      </if>
+     <if test="isok != null" >
+        isok = #{isok,jdbcType=SMALLINT},
+      </if>
+      <if test="addtime != null" >
+        addtime = #{addtime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where withdrawid = #{withdrawid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.xiuluo.model.aboutUs.Withdraw" >
+    update t_withdraw
+    set persionid = #{persionid,jdbcType=INTEGER},
+      monery = #{monery,jdbcType=DECIMAL},
+      account = #{account,jdbcType=VARCHAR},
+      userorwork = #{userorwork,jdbcType=SMALLINT},
+      isok = #{isok,jdbcType=SMALLINT},
+      addtime = #{addtime,jdbcType=TIMESTAMP}
+    where withdrawid = #{withdrawid,jdbcType=INTEGER}
+  </update>
+  
+  <select id="selectall" resultMap="BaseResultMap" >
+    select *
+    from t_withdraw
+  </select>
+</mapper>

@@ -1,0 +1,41 @@
+.wrap{width:100%;height:100%;}
+.wrap .inner{position:absolute;top:0;left:0;bottom:0;right:0;margin:auto;}
+.wrap .inner .title{height:50px;line-height:50px;text-align: center;border-bottom: 1px solid #1abb9c;margin-bottom: 10px;font-size: 24px;}
+.wrap .inner .bannerBox{width:90%;margin:0 auto;background: #fff;padding:10px;height:650px;}
+.wrap .inner .bannerBox .welcomeBanner{height:320px;border-bottom: 1px solid #1b6d85;padding-top:5px;}
+.wrap .inner .bannerBox .welcomeBanner h3{height:50px;line-height:50px;text-align: center;font-size: 18px;}
+.wrap .inner .bannerBox .shopBanner{height:320px;border-bottom: 1px solid #1b6d85;padding-top:5px;}
+.wrap .inner .bannerBox .shopBanner h3{height:50px;line-height:50px;text-align: center;font-size: 18px;}
+.wrap .inner .bannerBox .banner{height:270px;float: left;width:33%;position:relative;}
+.wrap .inner .bannerBox .banner img{height:200px;width: 200px;position:absolute;top:0;margin-left:100px;}
+.wrap .inner .bannerBox .banner input{height:30px;width: 100px;border-radius: 15px;border:1px solid #1b6d85;position:absolute;bottom:20px;left:0;margin-left:150px;overflow: hidden;background: #1b6d85;}
+.wrap .inner .bannerBox .banner .upfile{opacity:0;z-index:200;}
+.wrap .inner .bannerBox .banner .btn{z-index:100;color:#efefef;font-size: 16px;}
+.wrap .inner .bannerBox .banner .imgId{display: none;}
+
+#backBtn{height:40px;position:relative;margin-top:20px;}
+#backBtn p{width:100px;text-align: center;font:16px/40px "microsoft yahei"; color:#000;border:1px solid #333;border-radius: 15px;position: absolute;top:0;left:50%;margin-left:-50px;}
+#backBtn p:hover{background:#C0CBD1;color: #fff;cursor:pointer;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

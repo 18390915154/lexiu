@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>任务管理</title>
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/taskmanagement.css" rel="stylesheet">
+    <link href="media/css/jquery.dataTables.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="media/js/jquery.dataTables.min.js"></script>
+    <script src="js/jquery.easing.min.js"></script>
+    <script src="js/style.js"></script>
+    <script src="js/taskmanagement.js"></script>
+</head>
+<body>
+<div class="wrap">
+    <div class="inner">
+        <div class="title">任务管理</div>
+        <div class="taskBox" id="taskBox">
+            <table id="generalForm" class="display" cellspacing="0" width="100%">
+                <thead>
+                <tr>
+                    <th>订单编号</th>
+                    <th>师傅名称</th>
+                    <th>用户名称</th>
+                    <th>订单金额</th>
+                    <th>订单工种</th>
+                    <th>订单状态</th>
+                    <th>删除状态</th>
+                    <th>创建时间</th>
+                    <th>结束时间</th>
+                    <th>订单操作</th>
+                </tr>
+                </thead>
+                <tbody id="list"></tbody>
+            </table>
+        </div>
+        <div class="editBox" id="editBox">
+            <input type="text" value="" name="edit" id="ordernum" disabled="disabled"><br/>
+            订单价格：<input type="text" value="" name="edit" id="money"><br/>
+            故障详情：<input type="text" value="" name="edit" id="fault"><br/>
+            服务内容：<input type="text" value="" name="edit" id="server"><br/>
+            订单工种：<select id="workertype">
+                        <option value="0">初级电工</option>
+                        <option value="1">中级电工</option>
+                        <option value="2">高级电工</option>
+                        <option value="3">电工工程师</option>
+                        <option value="4">初级管道工程师</option>
+                        <option value="5">中级管道工程师</option>
+                        <option value="6">高级管道工程师</option>
+                        <option value="7">管道工程师</option>
+                    </select><br/>
+            <input type="button" value="修改" id="editBtn" class="editBtn"><input type="button" value="返回" id="cancelBtn" class="editBtn">
+        </div>
+        <div class="appraiseBox" id="appraiseBox">
+            <input type="text" value="" name="edit" id="ordernum2" disabled="disabled"><br/>
+            评价星级：<input type="text" value="" name="edit" id="evaluation1" disabled="disabled"><br/>
+            评价标签：<input type="text" value="" name="edit" id="evaluation2" disabled="disabled"><br/>
+            评价内容：<input  id="eval3_title" type="text" value="" name="edit"><br/>
+            <textarea id="evaluation3" class="evaluation3" disabled="disabled"></textarea><br/>
+            <input type="button" value="返回" id="appraiseBtn" class="editBtn">
+        </div>
+    </div>
+</div>
+</body>
+</html>

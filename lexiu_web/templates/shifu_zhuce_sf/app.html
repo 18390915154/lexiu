@@ -1,0 +1,17 @@
+
+<ion-view view-title="注册">
+    <ion-content class="register2">
+        <div class="list">
+            <form name="form1">
+                <label class="item item-input">
+                    <input type="text" placeholder="请输入手机号" ng-model="$parent.user">
+                </label>
+                <label class="item item-input item-button-right">
+                    <button class="button " ng-click="get()" ng-disabled="spot">{{time}}</button>
+                    <input type="text" placeholder="输入短信验证码" ng-model="$parent.code">
+                </label>
+            </form>
+        </div>
+        <button class="button button-block next" ng-click="next()">下一步</button>
+    </ion-content>
+</ion-view>

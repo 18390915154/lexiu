@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.xiuluo.dao.aboutUs.CompanyTypeMapper" >
+  <resultMap id="BaseResultMap" type="com.xiuluo.model.aboutUs.CompanyType" >
+    <id column="companytypeid" property="companytypeid" jdbcType="INTEGER" />
+    <result column="name" property="name" jdbcType="VARCHAR" />
+    <result column="addtime" property="addtime" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    companytypeid, name, addtime
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from t_company_type
+    where companytypeid = #{companytypeid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from t_company_type
+    where companytypeid = #{companytypeid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.xiuluo.model.aboutUs.CompanyType" >
+    insert into t_company_type (companytypeid, name, addtime
+      )
+    values (#{companytypeid,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{addtime,jdbcType=TIMESTAMP}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.xiuluo.model.aboutUs.CompanyType" >
+    insert into t_company_type
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="companytypeid != null" >
+        companytypeid,
+      </if>
+      <if test="name != null" >
+        name,
+      </if>
+      <if test="addtime != null" >
+        addtime,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="companytypeid != null" >
+        #{companytypeid,jdbcType=INTEGER},
+      </if>
+      <if test="name != null" >
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="addtime != null" >
+        #{addtime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.xiuluo.model.aboutUs.CompanyType" >
+    update t_company_type
+    <set >
+      <if test="name != null" >
+        name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="addtime != null" >
+        addtime = #{addtime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where companytypeid = #{companytypeid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.xiuluo.model.aboutUs.CompanyType" >
+    update t_company_type
+    set name = #{name,jdbcType=VARCHAR},
+      addtime = #{addtime,jdbcType=TIMESTAMP}
+    where companytypeid = #{companytypeid,jdbcType=INTEGER}
+  </update>
+  
+  <select id="selectByName" resultMap="BaseResultMap" >
+    select *
+    from t_company_type
+    where name = #{name}
+  </select>
+  
+  <select id="selectall" resultMap="BaseResultMap" >
+    select *
+    from t_company_type
+  </select>
+</mapper>

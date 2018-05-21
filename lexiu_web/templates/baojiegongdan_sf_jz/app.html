@@ -1,0 +1,35 @@
+<ion-view  hide-nav-bar="true">
+	<ion-header-bar class="baojie_top">
+		<i class="icon ion-chevron-left jump" ng-click="jump()"></i>
+		<div class="title dadsads ">报结工单</div>
+	</ion-header-bar>
+	<ion-content class="workorder">
+		<div class="service">服务内容</div>
+		<div class="list">
+			<label class="item item-input">
+				<input type="text" placeholder="请输入具体维修内容（例如：空调维修）" ng-required="true"  maxlength="150" ng-model="$parent.content">
+			</label>
+		</div>
+		<div class="service">故障详情</div>
+		<div class="list">
+			<label class="item item-input">
+				<input type="text" placeholder="请输入故障详情" ng-required="true"  ng-model="$parent.fault">
+			</label>
+		</div>
+		<div class="rule" ui-sref="price_guide">计价规则</div>
+		<!--<div class="service services">维修价格</div>
+		<div class="list">
+			<label class="item item-input">
+				<input type="text" placeholder="请输入维修价格"  ng-required="true"  ng-model="$parent.price">
+			</label>
+		</div>
+		<span>维修价格根据师傅上门的时间来定</span>-->
+		<div class="service">订单金额</div>
+		<div class="list">
+			<label class="item item-input">
+				<input type="text" placeholder="请输入金额" ng-model="$parent.price">
+			</label>
+		</div>
+		<button class="button button-block" ng-click="submit()">提交</button>
+	</ion-content>
+</ion-view>

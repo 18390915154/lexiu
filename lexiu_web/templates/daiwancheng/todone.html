@@ -1,0 +1,23 @@
+<ion-content class="todone">
+        <ion-list class=" list ">
+           <!-- ui-sref="todonedetail({orderid:{{order.orderid}}})"-->
+			<div class="dwc" style="display: block;">还没有订单，请下单后在看</div>
+            <ion-item class="item all " ng-repeat="order in orders"   ng-click="show()" >
+                <div class="item list_top done_card">
+                    <div>{{order.worktypename}}</div>
+                    <div class="typename">{{order.typename}}</div>
+                </div>
+                <a class="item item-avatar item-icon-right done_card banner" href="javascript:;">
+                    <!--<img ng-src="https://192.160.100.100:8080/{{order.avatar}}" class="detail_img">-->
+                    <img ng-src="{{order.avatar==''? 'images/shifu.jpg' : 'https://www.lerlex.com/'+order.avatar }}" class="detail_img">
+                    <span>{{order.workname}}</span>
+                    <a class="icon bar-phone phone" href="tel:{{order.userphone}}" ng-click="phone($event)"></a>
+                </a>
+                <a class="item item-icon-left item-borderless" href="javascript:;">
+                    <i class="icon ion-location"></i>
+                    {{order.address}}
+                </a>
+            </ion-item>
+        </ion-list>
+    </ion-content>
+

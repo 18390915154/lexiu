@@ -1,0 +1,17 @@
+<ion-view class="cancelOrder" view-title="取消原因">
+    <ion-content class="has-header">
+        <ion-list class="list" style="margin-top: 8vh;">
+            <h1>请告诉我们取消原因</h1>
+            <p>我们会努力为您提供更好的服务</p>
+            <ion-item class="item">{{reason1}}</ion-item>
+            <ion-item class="item">{{reason2}}</ion-item>
+            <ion-item class="item">{{reason3}}</ion-item>
+            <ion-item class="item">{{reason4}}</ion-item>
+            <ion-item class="item">{{reason5}}</ion-item>
+            <ion-item class="item">{{reason6}}</ion-item>
+            <ion-item class="item"><input type="text" placeholder="其他原因请输入" ng-model="others"> </ion-item>
+        </ion-list>
+        <button class="button button-block" ng-click="Map()">取消预订</button>
+        <button class="button button-block" ui-sref="map">点错了</button>
+    </ion-content>
+</ion-view>

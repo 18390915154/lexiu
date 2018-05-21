@@ -1,0 +1,43 @@
+<ion-view class="shop" view-title="商城">
+    <ion-content class="has-header">
+        <ion-slide-box does-continue="true" auto-play="true" slide-interval="1000" show-pager="true">
+            <ion-slide >
+                <div class="box" style="width:100%;height:200px" >
+                    <img src="{{'https://www.lerlex.com/'+pics[0].picurl}}" style="width: 100%;height: 100%;" >
+                </div>
+            </ion-slide>
+            <ion-slide >
+                <div class="box" style="width:100%;height:200px" >
+                    <img src="{{'https://www.lerlex.com/'+pics[1].picurl}}" style="width: 100%;height: 100%;" >
+                </div>
+            </ion-slide>
+            <ion-slide >
+                <div class="box" style="width:100%;height:200px" >
+                    <img src="{{'https://www.lerlex.com/'+pics[2].picurl}}" style="width: 100%;height: 100%;" >
+                </div>
+            </ion-slide>
+        </ion-slide-box>
+        <div class=" address">
+            <div class="item">
+                <div class="shop_address">商店地址:&nbsp<span>{{address}}</span></div>
+                <div class="item item-icon-right item-borderless item_inner">联系方式:&nbsp<span>{{tel}}</span>
+                    <div class="icon ion-location">{{latitude}}km</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="clearfix">
+            <div class="clearfix" style="width:50%;float: left;" ng-repeat="goodlist in goodlists">
+                <div class="row clearfix">
+                    <div class="col">
+                        <div class="header">
+                            <h1>{{goodlist.name}}</h1>
+                            <p><span>{{goodlist.score}}</span>元</p>
+                        </div>
+                        <div class="pic"><img src="https://www.lerlex.com/{{goodlist.picurl}}"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

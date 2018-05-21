@@ -1,0 +1,276 @@
+<ion-view hide-nav-bar="true" class="id">
+	<ion-header-bar>
+		<i class="icon ion-chevron-left return" ui-sref="tabs.person"></i>
+		<div class="title">身份认证</div>
+	</ion-header-bar>
+	<!--<form action="https://www.lerlex.com/lexiu/api/worker/workerPerfect"  id="yourformid" enctype="multipart/form-data"  novalidate="novalidate" method="post">-->
+	<form id="id_sf" enctype="multipart/form-data" novalidate="novalidate" method="post">
+		<ion-content class="has-header">
+			<div class="list">
+				<div class="item item-input">
+					<input type="text" placeholder="姓名" ng-model="$parent.nickname" name="nickname">
+				</div>
+				<!--<div class="item item-icon-right">-->
+				<!--出生日期<div class="people">{{date}}</div><i class="icon ion-chevron-right"></i>-->
+				<input type="text" id="birthday" style="display: none;" value="" placeholder="出生日期" ng-model="birthday" name="birthday">
+				<input type="text" id="userid" style="display: none;" value="" placeholder="师傅ID" ng-model="userid" name="userid">
+				<!--</div>-->
+				<div class="item item-icon-right">
+					性别
+					<div class="people">{{people}}</div><i class="icon ion-chevron-right" ng-click="openModal()"></i>
+					<!--<input type="text" placeholder="性别" ng-model="name" name="sex">-->
+					<input name="sex" id="sex" type="text" style="display: none;" value="">
+				</div>
+			</div>
+			<div class="list">
+				<div class="item item-input">
+					<input type="text" placeholder="联系方式" ng-model="$parent.phone" name="phone">
+				</div>
+				<div class="item item-input">
+					<input type="text" placeholder="紧急联系方式" ng-model="$parent.contacttel" name="contacttel">
+				</div>
+			</div>
+			<div class="list">
+				<div class="item item-input">
+					<input type="text" placeholder="所属企业(非必填)" ng-model="companies" name="companies">
+				</div>
+				<div class="item item-input">
+					<input type="text" placeholder="企业联系方式(非必填)" ng-model="companiestel" name="companiestel">
+				</div>
+			</div>
+			<div class="list">
+				<div class="item item-input">
+					<input type="text" id="UUserCard" placeholder="身份证号码" ng-model="$parent.id_card" name="id_card">
+				</div>
+			</div>
+			<div class="row">
+				<div class="col">
+					<a href="javascript:;" class="file">身份证正面照片
+						<input type="file" id="uploadFile" runat="server" name="myfiles" ng-model="myfiles" onchange="getPhoto(this)" />
+					</a>
+					<div class="pic"><img src="images/id_card.jpg" class="fileimg"></div>
+				</div>
+				<div class="col">
+					<!--身份证反面照片-->
+					<a href="javascript:;" class="file">身份证反面照片
+						<input type="file" id="uploadFile" runat="server" name="myfiles" ng-model="myfiles" onchange="getPhoto2(this)" />
+					</a>
+					<div class="pic"><img src="images/id_card.jpg"class="fileimg2"></div>
+				</div>
+			</div>
+			<div class="list">
+				<div class="item item-icon-right">
+					选择工种
+					<div class="work">{{work_name}}</div><i class="icon ion-chevron-right" ng-click="openModal2()"></i>
+					<input name="worktype" id="worktype" type="text" style="display: none;" value="" />
+				</div>
+
+			</div>
+			<div class="row">
+				<div class="col">
+					<div class="pic"><img src="images/id_card.jpg" class="fileimg3"></div>
+					<a href="javascript:;" class="file">证件照片1
+						<input type="file" id="uploadFile" runat="server" name="myfiles" ng-model="myfiles"  onchange="getPhoto3(this)" />
+					</a>
+					<!--<input type="file" id="uploadFile" runat="server" name="myfiles" ng-model="myfiles" /> 证件照片2
+					<input type="file" id="uploadFile" runat="server" name="myfiles" ng-model="myfiles" />-->
+				</div>
+				<div class="col">
+					<div class="pic"><img src="images/id_card.jpg" class="fileimg4"></div>
+					<a href="javascript:;" class="file">证件照片2
+						<input type="file" id="uploadFile" runat="server" name="myfiles" ng-model="myfiles" onchange="getPhoto4(this)" />
+					</a>
+					<!--<input type="file" id="uploadFile" runat="server" name="myfiles" ng-model="myfiles" />-->
+				</div>
+			</div>
+			<h1>工种介绍</h1>
+			<div class="ability">
+				<input name="skill" id="skill" type="text" style="display: none;" value="" />
+				<h2>擅长技能</h2>
+				<div class="row">
+					<div class="col col-30">电器维修</div>
+					<div class="col col-30">水电维修</div>
+					<div class="col col-30">水管维修</div>
+				</div>
+				<div class="row">
+					<div class="col col-30">专业维修</div>
+					<div class="col col-30">电器维修</div>
+					<div class="col col-30">水管维修</div>
+				</div>
+				<div class="row">
+					<div class="col col-30">电器维修</div>
+					<div class="col col-30">水管维修</div>
+					<div class="col col-30">专业维修</div>
+				</div>
+				<textarea placeholder="若上面没有您所需要的选项，请在这里备注" class="add" name="add"></textarea>
+			</div>
+			<div id="test"></div>
+			<button class="button button-block" ng-click="submit()">提交审核</button>
+		</ion-content>
+	</form>
+</ion-view>
+
+<script id="sex.html" type="text/ng-template">
+	<ion-modal-view class="sexbox">
+		<ion-content>
+			<div class="list">
+				<div class="item" ng-click="man()">男</div>
+				<div class="item" ng-click="woman()">女</div>
+			</div>
+			<button class="button button-block" ng-click="closeModal()">完成</button>
+		</ion-content>
+	</ion-modal-view>
+</script>
+
+<script id="work.html" type="text/ng-template">
+	<ion-modal-view class="workbox">
+		<ion-content>
+			<div class="list">
+				<div class="item" ng-click="work($index)" ng-repeat="worker in workers">{{worker.name}}<div style="display: none">{{worker.typeid}}</div></div>
+			</div>
+			<button class="button button-block" ng-click="closeModal2()">完成</button>
+		</ion-content>
+	</ion-modal-view>
+</script>
+<style type="text/css">
+	.file {
+		position: relative;
+		display: inline-block;
+		background: #D0EEFF;
+		border: 1px solid #99D3F5;
+		border-radius: 4px;
+		padding: 4px 12px;
+		overflow: hidden;
+		color: #1E88C7;
+		text-decoration: none;
+		text-indent: 0;
+		line-height: 20px;
+	}
+
+	.file input {
+		position: absolute;
+		font-size: 100px;
+		right: 0;
+		top: 0;
+		opacity: 0;
+	}
+
+	.file:hover {
+		background: #AADFFD;
+		border-color: #78C3F3;
+		color: #004974;
+		text-decoration: none;
+	}
+</style>
+<script type="text/javascript">
+	var imgurl = "";
+	function getPhoto(node) {
+		var imgURL = "";
+		try {
+			var file = null;
+			if(node.files && node.files[0]) {
+				file = node.files[0];
+			} else if(node.files && node.files.item(0)) {
+				file = node.files.item(0);
+			}
+			//Firefox 因安全性问题已无法直接通过input[file].value 获取完整的文件路径  
+			try {
+				imgURL = file.getAsDataURL();
+			} catch(e) {
+				imgRUL = window.URL.createObjectURL(file);
+			}
+		} catch(e) {
+			if(node.files && node.files[0]) {
+				var reader = new FileReader();
+				reader.onload = function(e) {
+					imgURL = e.target.result;
+				};
+				reader.readAsDataURL(node.files[0]);
+			}
+		}
+		$('.fileimg').attr('src', imgRUL);
+		return imgURL;
+	}
+
+	function getPhoto2(node) {
+		var imgURL = "";
+		try {
+			var file = null;
+			if(node.files && node.files[0]) {
+				file = node.files[0];
+			} else if(node.files && node.files.item(0)) {
+				file = node.files.item(0);
+			}
+			//Firefox 因安全性问题已无法直接通过input[file].value 获取完整的文件路径  
+			try {
+				imgURL = file.getAsDataURL();
+			} catch(e) {
+				imgRUL = window.URL.createObjectURL(file);
+			}
+		} catch(e) {
+			if(node.files && node.files[0]) {
+				var reader = new FileReader();
+				reader.onload = function(e) {
+					imgURL = e.target.result;
+				};
+				reader.readAsDataURL(node.files[0]);
+			}
+		}
+		$('.fileimg2').attr('src', imgRUL);
+		return imgURL;
+	}
+	function getPhoto3(node) {
+		var imgURL = "";
+		try {
+			var file = null;
+			if(node.files && node.files[0]) {
+				file = node.files[0];
+			} else if(node.files && node.files.item(0)) {
+				file = node.files.item(0);
+			}
+			//Firefox 因安全性问题已无法直接通过input[file].value 获取完整的文件路径  
+			try {
+				imgURL = file.getAsDataURL();
+			} catch(e) {
+				imgRUL = window.URL.createObjectURL(file);
+			}
+		} catch(e) {
+			if(node.files && node.files[0]) {
+				var reader = new FileReader();
+				reader.onload = function(e) {
+					imgURL = e.target.result;
+				};
+				reader.readAsDataURL(node.files[0]);
+			}
+		}
+		$('.fileimg3').attr('src', imgRUL);
+		return imgURL;
+	}
+	function getPhoto4(node) {
+		var imgURL = "";
+		try {
+			var file = null;
+			if(node.files && node.files[0]) {
+				file = node.files[0];
+			} else if(node.files && node.files.item(0)) {
+				file = node.files.item(0);
+			}
+			//Firefox 因安全性问题已无法直接通过input[file].value 获取完整的文件路径  
+			try {
+				imgURL = file.getAsDataURL();
+			} catch(e) {
+				imgRUL = window.URL.createObjectURL(file);
+			}
+		} catch(e) {
+			if(node.files && node.files[0]) {
+				var reader = new FileReader();
+				reader.onload = function(e) {
+					imgURL = e.target.result;
+				};
+				reader.readAsDataURL(node.files[0]);
+			}
+		}
+		$('.fileimg4').attr('src', imgRUL);
+		return imgURL;
+	}
+</script>

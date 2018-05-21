@@ -1,0 +1,16 @@
+<ion-view class="add_bank1" view-title="添加银行卡">
+	<ion-content>
+		<div class="list">
+			<label class="item item-input">
+				<input type="text" placeholder="输入银行预留手机号" ng-model="$parent.user">
+			</label>
+			<div class="item item-input-inset">
+				<label class="item-input-wrapper">
+					<input type="text" placeholder="输入短信验证码"  ng-model="$parent.code">
+				</label>
+				<button class="button button-small " ng-click="get()" ng-disabled="spot">{{time}}</button>
+			</div>
+		</div>
+		<button class="button button-block btn1" ng-click="ok()">确定</button>
+	</ion-content>
+</ion-view>

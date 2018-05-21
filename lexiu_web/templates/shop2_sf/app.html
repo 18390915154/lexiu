@@ -1,0 +1,13 @@
+<ion-view class="shop2"  title="商城">
+	<ion-content>
+			<h1>你附近有<span>{{number}}</span>家商店正在提供配送服务</h1>
+			<!--下拉刷新-->
+			<ion-refresher pulling-text="下拉刷新" pulling-icon="ion-load-d" on-pulling="doRefersh()"></ion-refresher>
+			<ion-item class="item item-thumbnail-left" ng-repeat=" product in products"  ui-sref="shop2_sf({shopid:{{product.shopid}}})">
+				<img src="https://www.lerlex.com/{{product.picurl}}">
+				<div class="title">{{product.name}}</div>
+				<div class="phone">联系电话:{{product.tel}}</div>
+				<div class="local"><span>{{product.address}}</span><span>{{product.distance}}公里</span></div>
+			</ion-item>
+	</ion-content>
+</ion-view>

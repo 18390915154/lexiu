@@ -1,0 +1,39 @@
+<ion-view class="personal" hide-nav-bar="true">
+	<ion-content>
+		<div class="header">
+			<div class="top">
+				<i class="icon ion-chevron-left" ui-sref="tabs.person"></i>
+				<h1>个人中心</h1>
+			</div>
+			<div class="pic"><img src="{{img}}"> </div>
+		</div>
+		<div class="list">
+			<div class="item item-icon-right">
+				姓名
+				<div class="return">
+					{{nickname}}<i class="icon ion-chevron-right"></i>
+				</div>
+			</div>
+			<div class="item item-icon-right">
+				性别
+				<div class="return">
+					{{sex}}<i class="icon ion-chevron-right"></i>
+				</div>
+			</div>
+			<div class="item">
+				年龄
+				<div class="return">{{age}}</div>
+			</div>
+			<div class="item item-icon-right">
+				生日
+				<div class="return">
+					{{birthday}}<i class="icon ion-chevron-right"></i>
+				</div>
+			</div>
+			<div class="item">
+				联系方式
+				<div class="return">{{phone}}</div>
+			</div>
+		</div>
+	</ion-content>
+</ion-view>

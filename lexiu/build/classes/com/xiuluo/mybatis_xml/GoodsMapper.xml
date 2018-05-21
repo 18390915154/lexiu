@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.xiuluo.dao.aboutUs.GoodsMapper" >
+  <resultMap id="BaseResultMap" type="com.xiuluo.model.aboutUs.Goods" >
+    <id column="goodsid" property="goodsid" jdbcType="INTEGER" />
+    <result column="shopid" property="shopid" jdbcType="INTEGER" />
+    <result column="score" property="score" jdbcType="REAL" />
+    <result column="name" property="name" jdbcType="VARCHAR" />
+    <result column="profile" property="profile" jdbcType="VARCHAR" />
+    <result column="picurl" property="picurl" jdbcType="VARCHAR" />
+    <result column="delstate" property="delstate" jdbcType="SMALLINT" />
+    <result column="addtime" property="addtime" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    goodsid, shopid, score, name, profile, picurl, delstate, addtime
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from t_goods
+    where goodsid = #{goodsid,jdbcType=INTEGER}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap" >
+    select *
+    from t_goods
+  </select>
+  <select id="selectByShopid" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select *
+    from t_goods
+    where shopid = #{shopid}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from t_goods
+    where goodsid = #{goodsid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.xiuluo.model.aboutUs.Goods" >
+    insert into t_goods (goodsid, shopid, score, 
+      name, profile, picurl, 
+      delstate, addtime)
+    values (#{goodsid,jdbcType=INTEGER}, #{shopid,jdbcType=INTEGER}, #{score,jdbcType=REAL}, 
+      #{name,jdbcType=VARCHAR}, #{profile,jdbcType=VARCHAR}, #{picurl,jdbcType=VARCHAR}, 
+      #{delstate,jdbcType=SMALLINT}, #{addtime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.xiuluo.model.aboutUs.Goods" >
+    insert into t_goods
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="goodsid != null" >
+        goodsid,
+      </if>
+      <if test="shopid != null" >
+        shopid,
+      </if>
+      <if test="score != null" >
+        score,
+      </if>
+      <if test="name != null" >
+        name,
+      </if>
+      <if test="profile != null" >
+        profile,
+      </if>
+      <if test="picurl != null" >
+        picurl,
+      </if>
+      <if test="delstate != null" >
+        delstate,
+      </if>
+      <if test="addtime != null" >
+        addtime,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="goodsid != null" >
+        #{goodsid,jdbcType=INTEGER},
+      </if>
+      <if test="shopid != null" >
+        #{shopid,jdbcType=INTEGER},
+      </if>
+      <if test="score != null" >
+        #{score,jdbcType=REAL},
+      </if>
+      <if test="name != null" >
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="profile != null" >
+        #{profile,jdbcType=VARCHAR},
+      </if>
+      <if test="picurl != null" >
+        #{picurl,jdbcType=VARCHAR},
+      </if>
+      <if test="delstate != null" >
+        #{delstate,jdbcType=SMALLINT},
+      </if>
+      <if test="addtime != null" >
+        #{addtime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.xiuluo.model.aboutUs.Goods" >
+    update t_goods
+    <set >
+      <if test="shopid != null" >
+        shopid = #{shopid,jdbcType=INTEGER},
+      </if>
+      <if test="score != null" >
+        score = #{score,jdbcType=REAL},
+      </if>
+      <if test="name != null" >
+        name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="profile != null" >
+        profile = #{profile,jdbcType=VARCHAR},
+      </if>
+      <if test="picurl != null" >
+        picurl = #{picurl,jdbcType=VARCHAR},
+      </if>
+      <if test="delstate != null" >
+        delstate = #{delstate,jdbcType=SMALLINT},
+      </if>
+      <if test="addtime != null" >
+        addtime = #{addtime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where goodsid = #{goodsid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.xiuluo.model.aboutUs.Goods" >
+    update t_goods
+    set shopid = #{shopid,jdbcType=INTEGER},
+      score = #{score,jdbcType=REAL},
+      name = #{name,jdbcType=VARCHAR},
+      profile = #{profile,jdbcType=VARCHAR},
+      picurl = #{picurl,jdbcType=VARCHAR},
+      delstate = #{delstate,jdbcType=SMALLINT},
+      addtime = #{addtime,jdbcType=TIMESTAMP}
+    where goodsid = #{goodsid,jdbcType=INTEGER}
+  </update>
+</mapper>

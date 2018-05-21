@@ -1,0 +1,31 @@
+<ion-view class="bank_manage" view-title="银行卡管理">
+	<ion-content>
+		<div class="all" ng-repeat="bank in banks" ng-click="cardid()">
+			<div type="text" style="display: none;">{{bank.cardid}}</div>
+			<div class="img"><img ng-src="{{bank.img}}"/></div>
+			<div class="nav"><span>{{bank.bankname}}<br></span><span>{{bank.card}}<br></span><span>{{bank.cardnumber}}</span></div>
+			<!--<div class="delete"  ng-click="openModal();delete(bank)" on-reorder="reorder(bank,$fromIndex,$toIndex)">删除</div>-->
+			<div class="delete"  ng-click="delete(bank)">删除</div>
+		</div>
+		<div class="add" ui-sref="add_bank_sf">
+			<div class="sign">
+				<div class="level"></div>
+				<div class="vertical"></div>
+			</div>
+			<h1>添加银行卡</h1>
+		</div>
+	</ion-content>
+	<script id="delete.html" type="text/ng-template">
+		<ion-modal-view class="deletebox">
+			<ion-content>
+				<div class="box">
+					<p>是否确认删除</p>
+					<div class="row">
+						<div class="col" ng-click="closeModal()">确定</div>
+						<div class="col" ng-click="closeModal()">取消</div>
+					</div>
+				</div>
+			</ion-content>
+		</ion-modal-view>
+	</script>
+</ion-view>

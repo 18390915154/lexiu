@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>编辑公司信息</title>
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/companyedit.css" rel="stylesheet">
+    <link href="media/css/jquery.dataTables.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="media/js/jquery.dataTables.min.js"></script>
+    <script src="js/jquery.easing.min.js"></script>
+    <script src="js/style.js"></script>
+    <script src="js/companyedit.js"></script>
+</head>
+<body>
+<div class="wrap">
+    <div class="inner">
+        <div class="title">编辑公司信息</div>
+        <div class="companyeditBox">
+            <form class="img_show img_show1 clearfix" name="form" id="form">
+                <img src="" alt="点击修改图片" id="userHead"  class="companyPoto">
+                <input type="file" name="myfiles" id="photo" class="upfile" accept="*/*">
+                <p class="companyName">公司名称：<input id="companyName" type="text" name="name" value=""></p>
+                <p class="companyAssd">公司地址：<input id="companyAssd" type="text" name="address" value=""></p>
+                <p class="tishi">请输入正确格式的地址（例：XX省XX市XX区XX路）</p>
+                <p class="companyContact">联系人：<input id="companyContact" type="text" name="contact" value=""></p>
+                <p class="companyTel">联系电话：<input id="companyTel" type="text" name="phone" value=""></p>
+                <div class="companyType"><span>公司类型：</span><br/>
+                    <div class="choseBox" id="choseBox">
+                       
+                    </div>
+                </div>
+                <input id="companyId" type="hidden" name="companyid" value="">
+                <input type="button" value="提交" id="submit" class="submitBtn btn">
+                <input type="button" value="返回" id="back" class="backBtn btn">
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+

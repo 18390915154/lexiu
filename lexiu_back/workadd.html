@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>新增工种</title>
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/workadd.css" rel="stylesheet">
+    <link href="media/css/jquery.dataTables.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="media/js/jquery.dataTables.min.js"></script>
+    <script src="js/jquery.easing.min.js"></script>
+    <script src="js/style.js"></script>
+    <script src="js/workadd.js"></script>
+</head>
+<body>
+<div class="wrap">
+    <div class="inner">
+        <div class="title">编辑新增工种</div>
+        <div class="workaddBox">
+            <form class="img_show img_show1 clearfix" name="form" id="form">
+                <p class="workName">一级工种名称：<select id="workName1">
+                    <option>电工</option>
+                    <option>管道工</option>
+                    <option>空调工</option>
+                </select></p>
+                <p class="workName">二级工种名称：<input id="workName2" type="text" name="name" value=""></p>
+                <input id="workId" type="hidden" name="workid" value="">
+                <input type="button" value="返回" id="back" class="backBtn btn">
+                <input type="button" value="提交" id="submit" class="submitBtn btn">
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+

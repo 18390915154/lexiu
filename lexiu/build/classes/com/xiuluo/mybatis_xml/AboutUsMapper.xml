@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.xiuluo.dao.aboutUs.AboutUsMapper" >
+  <resultMap id="BaseResultMap" type="com.xiuluo.model.aboutUs.AboutUs" >
+    <id column="about_id" property="aboutId" jdbcType="INTEGER" />
+    <result column="about_content" property="aboutContent" jdbcType="CHAR" />
+    <result column="about_status" property="aboutStatus" jdbcType="INTEGER" />
+    <result column="about_backup" property="aboutBackup" jdbcType="CHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    about_id, about_content, about_status, about_backup
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from t_about_us
+    where about_id = #{aboutId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from t_about_us
+    where about_id = #{aboutId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.xiuluo.model.aboutUs.AboutUs" >
+    insert into t_about_us (about_id, about_content, about_status, 
+      about_backup)
+    values (#{aboutId,jdbcType=INTEGER}, #{aboutContent,jdbcType=CHAR}, #{aboutStatus,jdbcType=INTEGER}, 
+      #{aboutBackup,jdbcType=CHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.xiuluo.model.aboutUs.AboutUs" >
+    insert into t_about_us
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="aboutId != null" >
+        about_id,
+      </if>
+      <if test="aboutContent != null" >
+        about_content,
+      </if>
+      <if test="aboutStatus != null" >
+        about_status,
+      </if>
+      <if test="aboutBackup != null" >
+        about_backup,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="aboutId != null" >
+        #{aboutId,jdbcType=INTEGER},
+      </if>
+      <if test="aboutContent != null" >
+        #{aboutContent,jdbcType=CHAR},
+      </if>
+      <if test="aboutStatus != null" >
+        #{aboutStatus,jdbcType=INTEGER},
+      </if>
+      <if test="aboutBackup != null" >
+        #{aboutBackup,jdbcType=CHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.xiuluo.model.aboutUs.AboutUs" >
+    update t_about_us
+    <set >
+      <if test="aboutContent != null" >
+        about_content = #{aboutContent,jdbcType=CHAR},
+      </if>
+      <if test="aboutStatus != null" >
+        about_status = #{aboutStatus,jdbcType=INTEGER},
+      </if>
+      <if test="aboutBackup != null" >
+        about_backup = #{aboutBackup,jdbcType=CHAR},
+      </if>
+    </set>
+    where about_id = #{aboutId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.xiuluo.model.aboutUs.AboutUs" >
+    update t_about_us
+    set about_content = #{aboutContent,jdbcType=CHAR},
+      about_status = #{aboutStatus,jdbcType=INTEGER},
+      about_backup = #{aboutBackup,jdbcType=CHAR}
+    where about_id = #{aboutId,jdbcType=INTEGER}
+  </update>
+</mapper>

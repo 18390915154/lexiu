@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.xiuluo.dao.aboutUs.BankLogoMapper" >
+  <resultMap id="BaseResultMap" type="com.xiuluo.model.aboutUs.BankLogo" >
+    <id column="logoid" property="logoid" jdbcType="INTEGER" />
+    <result column="picurl" property="picurl" jdbcType="VARCHAR" />
+    <result column="bankname" property="bankname" jdbcType="VARCHAR" />
+    <result column="addtime" property="addtime" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    logoid, picurl, bankname, addtime
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from t_bank_logo
+    where logoid = #{logoid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from t_bank_logo
+    where logoid = #{logoid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.xiuluo.model.aboutUs.BankLogo" >
+    insert into t_bank_logo (logoid, picurl, bankname, 
+      addtime)
+    values (#{logoid,jdbcType=INTEGER}, #{picurl,jdbcType=VARCHAR}, #{bankname,jdbcType=VARCHAR}, 
+      #{addtime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.xiuluo.model.aboutUs.BankLogo" >
+    insert into t_bank_logo
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="logoid != null" >
+        logoid,
+      </if>
+      <if test="picurl != null" >
+        picurl,
+      </if>
+      <if test="bankname != null" >
+        bankname,
+      </if>
+      <if test="addtime != null" >
+        addtime,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="logoid != null" >
+        #{logoid,jdbcType=INTEGER},
+      </if>
+      <if test="picurl != null" >
+        #{picurl,jdbcType=VARCHAR},
+      </if>
+      <if test="bankname != null" >
+        #{bankname,jdbcType=VARCHAR},
+      </if>
+      <if test="addtime != null" >
+        #{addtime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.xiuluo.model.aboutUs.BankLogo" >
+    update t_bank_logo
+    <set >
+      <if test="picurl != null" >
+        picurl = #{picurl,jdbcType=VARCHAR},
+      </if>
+      <if test="bankname != null" >
+        bankname = #{bankname,jdbcType=VARCHAR},
+      </if>
+      <if test="addtime != null" >
+        addtime = #{addtime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where logoid = #{logoid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.xiuluo.model.aboutUs.BankLogo" >
+    update t_bank_logo
+    set picurl = #{picurl,jdbcType=VARCHAR},
+      bankname = #{bankname,jdbcType=VARCHAR},
+      addtime = #{addtime,jdbcType=TIMESTAMP}
+    where logoid = #{logoid,jdbcType=INTEGER}
+  </update>
+</mapper>

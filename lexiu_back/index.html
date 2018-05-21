@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>后台管理</title>
+    <link href="css/font-awesome.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/index.css" rel="stylesheet">
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="js/jquery.easing.min.js"></script>
+    <script src="js/style.js"></script>
+    <script src="js/index.js"></script>
+</head>
+<body>
+<div class="wrapAll clearfix">
+    <!--左边导航部分开始-->
+    <div class="leftNav">
+        <div class="adminTitle">乐人乐修</div>
+        <div class="adminImfor">
+            <div class="adminName clearfix">
+                <div class="headImg"><i class="fa fa-user-circle-o"></i></div>
+                <div class="hesdName"><span>管理员：</span><span class="name" id="adminName">乐人乐修</span></div>
+            </div>
+        </div>
+        <ul class="fistList" id="fistList">
+            <li id="home">
+                <a href="javascript:;" class="action"><i class="fa fa-home"></i>首页<i class="fa fa-angle-right fa_second"></i></a>
+            </li>
+            <li id="userManagement">
+                <a href="javascript:;"><i class="fa fa-users"></i>用户管理 <i class="fa fa-angle-right fa_second"></i></a>
+                <ul class="userList secondList" id="userList">
+                    <li><a href="javascript:;"><i class="fa fa-caret-right "></i>用户管理</a></li>
+                    <li><a href="javascript:;"><i class="fa fa-caret-right "></i>师傅管理</a></li>
+                </ul>
+            </li>
+            <li id="taskManagement">
+                <a href="javascript:;"><i class="fa fa-folder"></i>任务管理<i class="fa fa-angle-right fa_second"></i></a>
+            </li>
+            <li id="settLement">
+                <a href="javascript:;"><i class="fa fa-calculator "></i>提现管理<i class="fa fa-angle-right fa_second"></i></a>
+            </li>
+            <li id="feedback">
+                <a href="javascript:;"><i class="fa fa-cubes "></i>意见反馈<i class="fa fa-angle-right fa_second"></i></a>
+            </li>
+            <li>
+                <a href="javascript:;"><i class="fa fa-money"></i>钱包<i class="fa fa-angle-right fa_second"></i></a>
+                <ul class="moneyList secondList" id="moneyList">
+                    <li><a href="javascript:;"><i class="fa fa-caret-right "></i>用户交易记录</a></li>
+                    <li><a href="javascript:;"><i class="fa fa-caret-right "></i>用户银行卡信息</a></li>
+                    <li><a href="javascript:;"><i class="fa fa-caret-right "></i>师傅交易记录</a></li>
+                    <li><a href="javascript:;"><i class="fa fa-caret-right "></i>师傅银行卡信息</a></li>
+                </ul>
+            </li>
+            <li id="shopList">
+                <a href="javascript:;"><i class="fa fa-shopping-bag"></i>商店管理<i class="fa fa-angle-right fa_second"></i></a>
+            </li>
+            <li id="companyList">
+                <a href="javascript:;"><i class="fa fa-university"></i>公司管理<i class="fa fa-angle-right fa_second"></i></a>
+            </li>
+            <li id="bannerList">
+                <a href="javascript:;"><i class="fa fa-camera-retro"></i>轮播图<i class="fa fa-angle-right fa_second"></i></a>
+            </li>
+            <!--<li id="workType">
+                <a href="javascript:;"><i class="fa fa-wrench"></i>维修工种<i class="fa fa-angle-right fa_second"></i></a>
+            </li>
+            <li id="homeWork">
+                <a href="javascript:;"><i class="fa fa-wrench"></i>家政工种<i class="fa fa-angle-right fa_second"></i></a>
+            </li>-->
+            <li id="proporTion">
+                <a href="javascript:;"><i class="fa fa-calculator"></i>结算比例<i class="fa fa-angle-right fa_second"></i></a>
+            </li>
+        </ul>
+    </div>
+    <!--左边导航部分结束-->
+    <!--右边内容部分开始-->
+    <div class="rightMain">
+        <div class="rightHeader">
+            <div class="cutoverBtn" id="cutoverBtn">
+                <i class="fa fa-align-justify"></i>
+            </div>
+            <div class="exitBtn" id="exitBtn">退出</div>
+        </div>
+        <div class="iframBox">
+            <iframe title="ifram" allowtransparency="yes" scrolling="no" src="home.html" id="iframInter"></iframe>
+        </div>
+    </div>
+    <!--右边内容部分结束-->
+</div>
+</body>
+</html>

@@ -1,0 +1,14 @@
+.wrap{width:100%;height:100%;}
+.wrap .inner{position:absolute;top:0;left:0;bottom:0;right:0;margin:auto;}
+.wrap .inner .title{height:50px;line-height:50px;text-align: center;border-bottom: 1px solid #1abb9c;margin-bottom: 10px;font-size: 24px;}
+.wrap .inner .timeBox{width:90%;margin:0 auto;background: #fff;padding:10px;}
+.wrap .inner .timeBox .jiaZheng{height:70px;text-align: center;padding-top: 30px;}
+.wrap .inner .timeBox .jiaZheng .jzjs{width:250px;height:35px;border:1px solid #333;padding:0 5px;margin-left:70px;}
+.wrap .inner .timeBox .jiaZheng .jzjsBtn{width:100px;height:35px;border:1px solid #333;}
+.wrap .inner .timeBox .jiaZheng .jz{width:100px;height:35px;border:none;background:#fff;font-size:16px;}
+.wrap .inner .timeBox .jiaZheng span{font-size:18px;color:red;margin-right:70px;}
+.wrap .inner .timeBox .weiXiu{height:70px;text-align: center;padding-top: 30px;}
+.wrap .inner .timeBox .weiXiu .wxjs{width:250px;height:35px;border:1px solid #333;padding:0 5px;margin-left:70px;}
+.wrap .inner .timeBox .weiXiu .wxjsBtn{width:100px;height:35px;border:1px solid #333;}
+.wrap .inner .timeBox .weiXiu .wx{width:100px;height:35px;border:none;background: #fff;font-size:16px;}
+.wrap .inner .timeBox .weiXiu span{font-size: 18px;color:red;margin-right:70px;}

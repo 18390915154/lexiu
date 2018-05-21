@@ -1,0 +1,20 @@
+<ion-view class="add_bank1">
+	<ion-header-bar>
+		<i class="return icon ion-chevron-left" ui-sref=""></i>
+		<div class="title">添加银行卡</div>
+	</ion-header-bar>
+	<ion-content>
+		<div class="list">
+			<label class="item item-input">
+				<input type="text" placeholder="输入银行预留手机号" ng-model="user">
+			</label>
+			<div class="item item-input-inset">
+				<label class="item-input-wrapper">
+					<input type="text" placeholder="输入短信验证码" no-model="idcode">
+				</label>
+				<button class="button button-small" ng-click="get()">60s内有效</button>
+			</div>
+		</div>
+		<button class="button button-block" ng-click="next()">确定</button>
+	</ion-content>
+</ion-view>

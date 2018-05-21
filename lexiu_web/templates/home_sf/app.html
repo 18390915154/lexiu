@@ -1,0 +1,21 @@
+<ion-view view-title="抢单中心">
+	<div class="stop" ng-click="rest()">停止<br>抢单</div>
+	<ion-content class="home">
+		<ion-item ng-repeat=" product in products">
+			<div class="list">
+				<div style="display: none;" ng-model="$parent.orderid" class="li">{{product.orderid}}</div>
+				<div class="name">{{product.typename}}</div>
+				<div class="item item-avatar">
+					<img src="{{product.avatar==''? 'images/D待完成_03.jpg' : 'https://www.lerlex.com/'+product.avatar }}"> {{product.username}}
+				</div>
+				<a class="item item-icon-left item-borderless" href="javascript:;">
+					<i class="icon ion-ios-clock"></i> {{product.formatstart}}
+				</a>
+				<a class="item item-icon-left item-borderless" href="javascript:;">
+					<i class="icon ion-location"></i> {{product.address}}
+				</a>
+			</div>
+			<button class="button button-block" ng-click="map5()">马上抢单</button>
+		</ion-item>
+	</ion-content>
+</ion-view>

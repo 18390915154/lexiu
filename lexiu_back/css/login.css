@@ -1,0 +1,43 @@
+/*2017.04.19 00:00*/
+.login{width:100vw;height:100vh;background:#f7f7f7;}
+.loginBox{width:400px;height:300px;position:absolute;top:0;left:0;bottom:0;right:0;margin:auto;border-top:1px solid #7e7e7e;text-align: center;}
+.loginBox h1{width:210px;height:48px;line-height:48px;background:#f7f7f7;margin:-24px auto 0; color:#73879c;font-size:24px;font-family: Arial;}
+.loginBox .enterImfor{width:380px;height:35px;margin:15px auto;border-radius: 5px;box-shadow:0 0 5px #9f9999 inset;padding:0 10px;color:#999;font-size:16px;outline: none;}
+.loginBox .btnIn{width:120px;height:35px;border-radius:5px;background: #f7f7f7;border:1px solid #9f9999;font-size:16px;color:#999;box-shadow:0 0 5px #9f9999 inset;margin:10px auto;outline: none;transition: all 0.6s ease;}
+.loginBox .btnIn:hover{transform:scale(1.1);cursor:pointer;}
+.loginBox .bottomLine{width:400px;height:40px;line-height:40px;border-top:1px solid #ccc;font-size:14px;color:#7387a8;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

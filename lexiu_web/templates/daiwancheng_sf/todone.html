@@ -1,0 +1,26 @@
+<ion-content class="todone" hide-nav-bar="true">
+        <ion-list class=" list ">
+			<div class="dwc" style="display: block;">还没有抢得订单，请先抢单</div>
+            <ion-item class="item all " ng-repeat="order in orders"  ng-click="jump(order.orderid,order.gomap)">
+                <div class="item list_top done_card">
+                    <div>{{order.worktypename}}</div>
+                    <div>{{order.typename}}</div>
+                </div>
+                <a class="item item-avatar item-icon-right done_card" href="javascript:;">
+                    <!--<img class="tx" ng-src="https://www.lerlex.com/{{order.avatar}}">-->
+                    <img class="tx" ng-src="{{order.avatar==''? 'images/D待完成_03.jpg' : 'https://www.lerlex.com/'+order.avatar }}">
+                    <span>{{order.username}}</span>
+                    <a class="icon bar-phone phones" href="tel:{{order.userphone}}" ng-click="phone($event)"></a>
+                </a>
+                <a class="item item-icon-left item-borderless" href="javascript:;">
+                    <i class="icon ion-ios-clock icon1"></i>
+                    {{order.formatadd}}
+                </a>
+                <a class="item item-icon-left item-borderless" href="javascript:;">
+                    <i class="icon ion-location"></i>
+                    {{order.address}}
+                </a>
+            </ion-item>
+        </ion-list>
+    </ion-content>
+

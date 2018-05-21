@@ -1,0 +1,25 @@
+<ion-view hide-nav-bar="true">
+	<ion-content class="comment1" id="yh_comment1">
+		<div class="bar bar-header">
+			<!--<i class="icon ion-chevron-left return" ui-sref="tabs.person"></i>-->
+			<i class="icon ion-chevron-left return" ng-click="back2()"></i>
+			<div class="title">我的评价</div>
+			<div class="myComment1" ui-sref="tabs.order.todone">我的订单</div>
+		</div>
+		<div class="list has-header">
+			<div class="item item-avatar" ng-repeat=" product in products">
+				<img src="{{order.avatar==''? 'images/shifu.jpg' : 'https://www.lerlex.com/'+product.avatar }}">
+				<p>{{product.nickname}}</p>
+				<div class="attitude">
+					<div class="all">
+						<a href="javascript:;" ng-repeat="newArrays in product.newArray" >
+							<i class="icon {{newArrays.icon}} energized"></i>
+						</a>
+					</div>
+					<div class="attitudes">{{product.how}}</div>
+				</div>
+			</div>
+			<div class="notice ">具体信息请到订单中查看</div>
+		</div>
+	</ion-content>
+</ion-view>

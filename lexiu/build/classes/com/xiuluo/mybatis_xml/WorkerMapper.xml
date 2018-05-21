@@ -1,0 +1,362 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.xiuluo.dao.aboutUs.WorkerMapper" >
+  <resultMap id="BaseResultMap" type="com.xiuluo.model.aboutUs.Worker" >
+    <id column="workerid" property="workerid" jdbcType="INTEGER" />
+    <result column="companyid" property="companyid" jdbcType="INTEGER" />
+    <result column="phone" property="phone" jdbcType="VARCHAR" />
+    <result column="nickname" property="nickname" jdbcType="VARCHAR" />
+    <result column="password" property="password" jdbcType="VARCHAR" />
+    <result column="paypassword" property="paypassword" jdbcType="VARCHAR" />
+    <result column="avatar" property="avatar" jdbcType="VARCHAR" />
+    <result column="sex" property="sex" jdbcType="VARCHAR" />
+    <result column="birthday" property="birthday" jdbcType="DATE" />
+    <result column="age" property="age" jdbcType="INTEGER" />
+    <result column="contact_tel" property="contactTel" jdbcType="VARCHAR" />
+    <result column="tel" property="tel" jdbcType="VARCHAR" />
+    <result column="companies_tel" property="companiesTel" jdbcType="VARCHAR" />
+    <result column="identity_front" property="identityFront" jdbcType="VARCHAR" />
+    <result column="identity_rear" property="identityRear" jdbcType="VARCHAR" />
+    <result column="credentials_front" property="credentialsFront" jdbcType="VARCHAR" />
+    <result column="credentials_rear" property="credentialsRear" jdbcType="VARCHAR" />
+    <result column="skill" property="skill" jdbcType="VARCHAR" />
+    <result column="grade" property="grade" jdbcType="REAL" />
+    <result column="money" property="money" jdbcType="DECIMAL" />
+    <result column="score" property="score" jdbcType="INTEGER" />
+    <result column="idcard" property="idcard" jdbcType="VARCHAR" />
+    <result column="typeid" property="typeid" jdbcType="INTEGER" />
+    <result column="isok" property="isok" jdbcType="SMALLINT" />
+    <result column="addtime" property="addtime" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    workerid,companyid, phone, nickname, password,paypassword, avatar, sex, birthday, age,contact_tel, tel, 
+    companies_tel, identity_front, identity_rear, credentials_front, credentials_rear, 
+    skill, grade, money, socre,idcard,typeid,isok,addtime
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select *
+    from t_worker
+    where workerid = #{workerid,jdbcType=INTEGER}
+  </select>
+  <select id="selectByPhone" resultMap="BaseResultMap">
+    select *
+    from t_worker
+    where phone = #{phone}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from t_worker
+    where workerid = #{workerid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.xiuluo.model.aboutUs.Worker" >
+    insert into t_worker (workerid,companyid, phone, nickname, 
+      password,paypassword avatar, sex, 
+      birthday,age,contact_tel, tel, 
+      companies_tel, identity_front, 
+      identity_rear, credentials_front, credentials_rear, 
+      skill, grade, money, score,idcard,typeid,isok,addtime
+      )
+    values (#{workerid,jdbcType=INTEGER},#{companyid,jdbcType=INTEGER}, #{phone,jdbcType=VARCHAR}, #{nickname,jdbcType=VARCHAR}, 
+      #{password,jdbcType=VARCHAR}, #{paypassword,jdbcType=VARCHAR}, #{avatar,jdbcType=VARCHAR}, #{sex,jdbcType=VARCHAR}, 
+      #{birthday,jdbcType=DATE},#{age,jdbcType=INTEGER}, #{contactTel,jdbcType=VARCHAR}, #{tel,jdbcType=VARCHAR}, 
+      #{companiesTel,jdbcType=VARCHAR}, #{identityFront,jdbcType=VARCHAR}, 
+      #{identityRear,jdbcType=VARCHAR}, #{credentialsFront,jdbcType=VARCHAR}, #{credentialsRear,jdbcType=VARCHAR}, 
+      #{skill,jdbcType=VARCHAR}, #{grade,jdbcType=REAL}, #{money,jdbcType=DECIMAL}, #{score,jdbcType=INTEGER},
+      #{idcard,jdbcType=INTEGER},#{typeid,jdbcType=INTEGER},#{isok,jdbcType=SMALLINT},#{addtime,jdbcType=TIMESTAMP}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.xiuluo.model.aboutUs.Worker" >
+    insert into t_worker
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="workerid != null" >
+        workerid,
+      </if>
+      <if test="companyid != null" >
+        companyid,
+      </if>
+      <if test="phone != null" >
+        phone,
+      </if>
+      <if test="nickname != null" >
+        nickname,
+      </if>
+      <if test="password != null" >
+        password,
+      </if>
+      <if test="paypassword != null" >
+        paypassword,
+      </if>
+      <if test="avatar != null" >
+        avatar,
+      </if>
+      <if test="sex != null" >
+        sex,
+      </if>
+      <if test="birthday != null" >
+        birthday,
+      </if>
+      <if test="age != null" >
+        age,
+      </if>
+      <if test="contactTel != null" >
+        contact_tel,
+      </if>
+      <if test="tel != null" >
+        tel,
+      </if>
+      <if test="companiesTel != null" >
+        companies_tel,
+      </if>
+      <if test="identityFront != null" >
+        identity_front,
+      </if>
+      <if test="identityRear != null" >
+        identity_rear,
+      </if>
+      <if test="credentialsFront != null" >
+        credentials_front,
+      </if>
+      <if test="credentialsRear != null" >
+        credentials_rear,
+      </if>
+      <if test="skill != null" >
+        skill,
+      </if>
+      <if test="grade != null" >
+        grade,
+      </if>
+      <if test="money != null" >
+        money,
+      </if>
+      <if test="score != null" >
+        score,
+      </if>
+      <if test="idcard != null" >
+        idcard,
+      </if>
+      <if test="typeid != null" >
+        typeid,
+      </if>
+      <if test="isok != null" >
+        isok,
+      </if>
+      <if test="addtime != null" >
+        addtime,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="workerid != null" >
+        #{workerid,jdbcType=INTEGER},
+      </if>
+      <if test="companyid != null" >
+        #{companyid,jdbcType=INTEGER},
+      </if>
+      <if test="phone != null" >
+        #{phone,jdbcType=VARCHAR},
+      </if>
+      <if test="nickname != null" >
+        #{nickname,jdbcType=VARCHAR},
+      </if>
+      <if test="password != null" >
+        #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="paypassword != null" >
+        #{paypassword,jdbcType=VARCHAR},
+      </if>
+      <if test="avatar != null" >
+        #{avatar,jdbcType=VARCHAR},
+      </if>
+      <if test="sex != null" >
+        #{sex,jdbcType=VARCHAR},
+      </if>
+      <if test="birthday != null" >
+        #{birthday,jdbcType=DATE},
+      </if>
+      <if test="age != null" >
+        #{age,jdbcType=INTEGER},
+      </if>
+      <if test="contactTel != null" >
+        #{contactTel,jdbcType=VARCHAR},
+      </if>
+      <if test="tel != null" >
+        #{tel,jdbcType=VARCHAR},
+      </if>
+      <if test="companiesTel != null" >
+        #{companiesTel,jdbcType=VARCHAR},
+      </if>
+      <if test="identityFront != null" >
+        #{identityFront,jdbcType=VARCHAR},
+      </if>
+      <if test="identityRear != null" >
+        #{identityRear,jdbcType=VARCHAR},
+      </if>
+      <if test="credentialsFront != null" >
+        #{credentialsFront,jdbcType=VARCHAR},
+      </if>
+      <if test="credentialsRear != null" >
+        #{credentialsRear,jdbcType=VARCHAR},
+      </if>
+      <if test="skill != null" >
+        #{skill,jdbcType=VARCHAR},
+      </if>
+      <if test="grade != null" >
+        #{grade,jdbcType=REAL},
+      </if>
+      <if test="money != null" >
+        #{money,jdbcType=DECIMAL},
+      </if>
+      <if test="score != null" >
+        #{score,jdbcType=INTEGER},
+      </if>
+      <if test="idcard != null" >
+        #{idcard,jdbcType=VARCHAR},
+      </if>
+      <if test="typeid != null" >
+        #{typeid,jdbcType=INTEGER},
+      </if>
+      <if test="isok != null" >
+        #{isok,jdbcType=SMALLINT},
+      </if>
+      <if test="addtime != null" >
+        #{addtime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.xiuluo.model.aboutUs.Worker" >
+    update t_worker
+    <set >
+      <if test="companyid != null" >
+        companyid = #{companyid,jdbcType=INTEGER},
+      </if>
+      <if test="phone != null" >
+        phone = #{phone,jdbcType=VARCHAR},
+      </if>
+      <if test="nickname != null" >
+        nickname = #{nickname,jdbcType=VARCHAR},
+      </if>
+      <if test="password != null" >
+        password = #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="paypassword != null" >
+        paypassword = #{paypassword,jdbcType=VARCHAR},
+      </if>
+      <if test="avatar != null" >
+        avatar = #{avatar,jdbcType=VARCHAR},
+      </if>
+      <if test="sex != null" >
+        sex = #{sex,jdbcType=VARCHAR},
+      </if>
+      <if test="birthday != null" >
+        birthday = #{birthday,jdbcType=DATE},
+      </if>
+      <if test="age != null" >
+        age = #{age,jdbcType=INTEGER},
+      </if>
+      <if test="contactTel != null" >
+        contact_tel = #{contactTel,jdbcType=VARCHAR},
+      </if>
+      <if test="tel != null" >
+        tel = #{tel,jdbcType=VARCHAR},
+      </if>
+      <if test="companiesTel != null" >
+        companies_tel = #{companiesTel,jdbcType=VARCHAR},
+      </if>
+      <if test="identityFront != null" >
+        identity_front = #{identityFront,jdbcType=VARCHAR},
+      </if>
+      <if test="identityRear != null" >
+        identity_rear = #{identityRear,jdbcType=VARCHAR},
+      </if>
+      <if test="credentialsFront != null" >
+        credentials_front = #{credentialsFront,jdbcType=VARCHAR},
+      </if>
+      <if test="credentialsRear != null" >
+        credentials_rear = #{credentialsRear,jdbcType=VARCHAR},
+      </if>
+      <if test="skill != null" >
+        skill = #{skill,jdbcType=VARCHAR},
+      </if>
+      <if test="grade != null" >
+        grade = #{grade,jdbcType=REAL},
+      </if>
+      <if test="money != null" >
+        money = #{money,jdbcType=DECIMAL},
+      </if>
+      <if test="score != null" >
+        score = #{score,jdbcType=INTEGER},
+      </if>
+      <if test="idcard != null" >
+        idcard = #{idcard,jdbcType=VARCHAR},
+      </if>
+      <if test="typeid != null" >
+        typeid = #{typeid,jdbcType=INTEGER},
+      </if>
+      <if test="isok != null" >
+        isok = #{isok,jdbcType=SMALLINT},
+      </if>
+      <if test="addtime != null" >
+        addtime = #{addtime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where workerid = #{workerid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.xiuluo.model.aboutUs.Worker" >
+    update t_worker
+    set phone = #{phone,jdbcType=VARCHAR},
+      companyid = #{companyid,jdbcType=INTEGER},
+      nickname = #{nickname,jdbcType=VARCHAR},
+      password = #{password,jdbcType=VARCHAR},
+      paypassword = #{paypassword,jdbcType=VARCHAR},
+      avatar = #{avatar,jdbcType=VARCHAR},
+      sex = #{sex,jdbcType=VARCHAR},
+      birthday = #{birthday,jdbcType=DATE},
+      age = #{age,jdbcType=INTEGER},
+      contact_tel = #{contactTel,jdbcType=VARCHAR},
+      tel = #{tel,jdbcType=VARCHAR},
+      companies_tel = #{companiesTel,jdbcType=VARCHAR},
+      identity_front = #{identityFront,jdbcType=VARCHAR},
+      identity_rear = #{identityRear,jdbcType=VARCHAR},
+      credentials_front = #{credentialsFront,jdbcType=VARCHAR},
+      credentials_rear = #{credentialsRear,jdbcType=VARCHAR},
+      skill = #{skill,jdbcType=VARCHAR},
+      grade = #{grade,jdbcType=REAL},
+      money = #{money,jdbcType=DECIMAL},
+      score = #{score,jdbcType=INTEGER},
+      idcard = #{idcard,jdbcType=VARCHAR},
+      typeid = #{typeid,jdbcType=INTEGER},
+      isok = #{isok,jdbcType=SMALLINT},
+      addtime = #{addtime,jdbcType=TIMESTAMP}
+    where workerid = #{workerid,jdbcType=INTEGER}
+  </update>
+  
+  <select id="selectworkerbyworktype" resultMap="BaseResultMap">
+    select *
+    from t_worker where isok=1
+  </select>
+  
+  <select id="selectWorkerManageByPhone" resultMap="BaseResultMap">
+    select *
+    from t_worker
+    where
+    <if test="phone != null and phone.length() > 0">
+    	and phone like CONCAT('%',#{phone},'%')  
+    </if> 
+    <if test="isok != null" >
+    	and isok = #{isok}  
+    </if> 
+  </select>
+  
+  <select id="selectallworker" resultMap="BaseResultMap">
+    select *
+    from t_worker
+  </select>
+  
+  <select id="selectbycompanyid" resultMap="BaseResultMap">
+    select *
+    from t_worker where companyid = #{companyid} and isok = 1
+  </select>
+  
+  <select id="selectbytypeid" resultMap="BaseResultMap">
+    select *
+    from t_worker where typeid = #{typeid} and isok = 1
+  </select>
+</mapper>

@@ -1,0 +1,13 @@
+<ion-view class="jz_company"  title="{{type}}">
+	<ion-content>
+		<h1>你附近有<span>{{number}}</span>家家政公司正在提供配送服务</h1>
+		<!--下拉刷新-->
+		<ion-refresher pulling-text="下拉刷新" pulling-icon="ion-load-d" on-pulling="doRefersh()"></ion-refresher>
+		<ion-item class="item item-thumbnail-left" ng-repeat="product in pruducts" ui-sref="place_order({companyid:product.companyid,type:type,company_longitude:product.longitude,company_latitude:product.latitude})" >
+			<img src="https://www.lerlex.com/{{product.picurl}}">
+			<div class="title">{{product.name}}</div>
+			<div class="phone">联系电话:{{product.phone}}</div>
+			<div class="local"><span>{{product.address}}</span><span>{{product.distance}}</span></div>
+		</ion-item>
+	</ion-content>
+</ion-view>

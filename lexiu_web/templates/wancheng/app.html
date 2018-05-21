@@ -1,0 +1,33 @@
+<ion-content class="done">
+		<ion-list class="list">
+			<div class="ywc" style="display: block;">无完成订单</div>
+			<ion-item class="item all " ng-repeat="order in orders" ui-sref="donedetail({orderid:{{order.orderid}}})">
+				<ion-item class="item done_card ">
+					<div class="work">{{order.worktypename}}</div>
+					<div class="rmb">{{order.price}}元</div>
+				</ion-item>
+				<ion-item class="item item-avatar item-icon-right done_card fig item-icon-right">
+					<img ng-src="https://www.lerlex.com/{{order.avatar}}" class="imgs">
+					<span class="order_title">{{order.workname}}</span>
+					<a class="icon bar-phone phone" href="tel:{{order.userphone}}" ng-click="phone($event)"></a>
+				</ion-item>
+				<ion-item class="item item-icon-left">
+					<i class="icon ion-ios-clock  balanced"></i>
+					{{order.formatstart}}
+				</ion-item>
+				<ion-item class="item item-icon-left">
+					<i class="icon ion-ios-clock assertive"></i>
+					{{order.formatover}}
+				</ion-item>
+				<ion-item class="item item-icon-left">
+					<i class="icon ion-location"></i>
+					{{order.address}}
+				</ion-item>
+				<ion-item class="item item-icon-left items">
+					<i class="icon ion-ios-compose"></i>
+					{{order.fault}}
+				</ion-item>
+			</ion-item>
+		</ion-list>
+	</ion-content>
+

@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.xiuluo.dao.aboutUs.ShopBannerMapper" >
+  <resultMap id="BaseResultMap" type="com.xiuluo.model.aboutUs.ShopBanner" >
+    <id column="shop_bannerid" property="shopBannerid" jdbcType="INTEGER" />
+    <result column="shopid" property="shopid" jdbcType="INTEGER" />
+    <result column="picurl" property="picurl" jdbcType="VARCHAR" />
+    <result column="sort" property="sort" jdbcType="INTEGER" />
+    <result column="addtime" property="addtime" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    shop_bannerid, shopid, picurl, sort, addtime
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from t_shop_banner
+    where shop_bannerid = #{shopBannerid,jdbcType=INTEGER}
+  </select>
+  <select id="selectByShopid" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select *
+    from t_shop_banner
+    where shopid = #{shopid}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap" >
+    select *
+    from t_shop_banner
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from t_shop_banner
+    where shop_bannerid = #{shopBannerid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.xiuluo.model.aboutUs.ShopBanner" >
+    insert into t_shop_banner (shop_bannerid, shopid, picurl, 
+      sort, addtime)
+    values (#{shopBannerid,jdbcType=INTEGER}, #{shopid,jdbcType=INTEGER}, #{picurl,jdbcType=VARCHAR}, 
+      #{sort,jdbcType=INTEGER}, #{addtime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.xiuluo.model.aboutUs.ShopBanner" >
+    insert into t_shop_banner
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="shopBannerid != null" >
+        shop_bannerid,
+      </if>
+      <if test="shopid != null" >
+        shopid,
+      </if>
+      <if test="picurl != null" >
+        picurl,
+      </if>
+      <if test="sort != null" >
+        sort,
+      </if>
+      <if test="addtime != null" >
+        addtime,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="shopBannerid != null" >
+        #{shopBannerid,jdbcType=INTEGER},
+      </if>
+      <if test="shopid != null" >
+        #{shopid,jdbcType=INTEGER},
+      </if>
+      <if test="picurl != null" >
+        #{picurl,jdbcType=VARCHAR},
+      </if>
+      <if test="sort != null" >
+        #{sort,jdbcType=INTEGER},
+      </if>
+      <if test="addtime != null" >
+        #{addtime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.xiuluo.model.aboutUs.ShopBanner" >
+    update t_shop_banner
+    <set >
+      <if test="shopid != null" >
+        shopid = #{shopid,jdbcType=INTEGER},
+      </if>
+      <if test="picurl != null" >
+        picurl = #{picurl,jdbcType=VARCHAR},
+      </if>
+      <if test="sort != null" >
+        sort = #{sort,jdbcType=INTEGER},
+      </if>
+      <if test="addtime != null" >
+        addtime = #{addtime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where shop_bannerid = #{shopBannerid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.xiuluo.model.aboutUs.ShopBanner" >
+    update t_shop_banner
+    set shopid = #{shopid,jdbcType=INTEGER},
+      picurl = #{picurl,jdbcType=VARCHAR},
+      sort = #{sort,jdbcType=INTEGER},
+      addtime = #{addtime,jdbcType=TIMESTAMP}
+    where shop_bannerid = #{shopBannerid,jdbcType=INTEGER}
+  </update>
+</mapper>

@@ -1,0 +1,13 @@
+<ion-view class="service_address" title="服务地址">
+	<div id="allmap_service"></div>
+	<div class="item item-input-inset search">
+        <input type="text" placeholder="请输入地址" id="search_address" ng-model="new_address" size="20" ng-change="address_change()">
+        <button class="button button-clear" ng-click="sure()">确定</button>
+    </div>
+	<div class="list" style="overflow-y: scroll">
+		<div class="item" ng-repeat="company in companys" ng-click="jump($index)">
+			<h1>{{company.name}}</h1>
+			<p>{{company.address}}</p>
+		</div>
+	</div>
+</ion-view>

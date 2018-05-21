@@ -1,0 +1,13 @@
+.wrap{width:100%;height:100%;}
+.wrap .inner{position:absolute;top:0;left:0;bottom:0;right:0;margin:auto;}
+.wrap .inner .title{height:50px;line-height:50px;text-align: center;border-bottom: 1px solid #1abb9c;margin-bottom: 10px;font-size: 24px;}
+.wrap .inner .homeWorkaddBox{width:90%;margin:0 auto;background: #fff;padding:10px;text-align: center;}
+.wrap .inner .homeWorkaddBox .workPoto{width: 200px;height:200px;margin:20px 0;}
+.wrap .inner .homeWorkaddBox p{width:400px;height:50px;line-height:50px;margin:0 auto;}
+.wrap .inner .homeWorkaddBox .tishi{color:#942a25;font-size: 14px;height:20px;line-height:20px;}
+.wrap .inner .homeWorkaddBox p>input{width:280px;height:25px;background: #f5f5f5;border-radius:3px;box-shadow: 0 0 10px #e5e5e5 inset;border:none;padding:0 10px;float:right;margin-top:12px;}
+.wrap .inner .homeWorkaddBox .btn{width:100px;height:35px;line-height:35px;border-radius: 8px;background: #bdc3c7;border:none;margin:15px;cursor: pointer;}
+.wrap .inner .homeWorkaddBox .btn:hover{background: #73879c;color:#efefef;}
+.wrap .inner .homeWorkaddBox .backBtn{margin-left:45px;}
+#form{width: 400px;margin:0 auto;position: relative;}
+.wrap .inner .homeWorkaddBox .upfile{width: 200px;height:200px;position:absolute;top:20px;left:100px;border:1px solid #1b6d85;opacity: 0;}

@@ -1,0 +1,15 @@
+<component name="libraryTable">
+  <library name="Generated files" type="javaScript">
+    <properties>
+      <sourceFilesUrls>
+        <item url="file://$PROJECT_DIR$/js/btn.min.js" />
+        <item url="file://$PROJECT_DIR$/templates/about_sf/appCtrl.min.js" />
+      </sourceFilesUrls>
+    </properties>
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/js/btn.min.js" />
+      <root url="file://$PROJECT_DIR$/templates/about_sf/appCtrl.min.js" />
+    </CLASSES>
+    <SOURCES />
+  </library>
+</component>

@@ -1,0 +1,19 @@
+<ion-view class="share" title="分享">
+	<ion-content>
+		<div class="share_inner">
+			<div class="share_top"></div>
+			<div class="btn" ng-click="openModal()">分享</div>
+		</div>
+	</ion-content>
+	<script id="share.html" type="text/ng-template">
+		<ion-modal-view class="share" style="background: none;bottom: 0;top: 70%;">
+			<ion-content style="background: #fff;width: 96%;margin: 0 auto;">
+				<div class="list padding">
+					<div class="item" ng-click="friend()" style="border: none;text-align: center;background: #333;color: #fff;">分享给好友</div>
+					<div class="item" ng-click="friends()" style="border: none;text-align: center;background: #333;color: #fff;">分享到朋友圈</div>
+				</div>
+				<button class="button button-block" ng-click="closeModal()" style="color: #fff;background: #333;">取消</button>
+			</ion-content>
+		</ion-modal-view>
+	</script>
+</ion-view>

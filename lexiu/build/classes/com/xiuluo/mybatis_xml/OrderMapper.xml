@@ -1,0 +1,361 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.xiuluo.dao.aboutUs.OrderMapper" >
+  <resultMap id="BaseResultMap" type="com.xiuluo.model.aboutUs.Order" >
+    <id column="orderid" property="orderid" jdbcType="INTEGER" />
+    <result column="ordernum" property="ordernum" jdbcType="VARCHAR" />
+    <result column="starttime" property="starttime" jdbcType="TIMESTAMP" />
+    <result column="overtime" property="overtime" jdbcType="TIMESTAMP" />
+    <result column="address" property="address" jdbcType="VARCHAR" />
+    <result column="price" property="price" jdbcType="DECIMAL" />
+    <result column="userid" property="userid" jdbcType="INTEGER" />
+    <result column="workerid" property="workerid" jdbcType="INTEGER" />
+    <result column="companyid" property="companyid" jdbcType="INTEGER" />
+    <result column="typeid" property="typeid" jdbcType="INTEGER" />
+    <result column="counttime" property="counttime" jdbcType="VARCHAR" />
+    <result column="type" property="type" jdbcType="SMALLINT" />
+    <result column="content" property="content" jdbcType="VARCHAR" />
+    <result column="fault" property="fault" jdbcType="VARCHAR" />
+    <result column="longitude" property="longitude" jdbcType="DECIMAL" />
+    <result column="latitude" property="latitude" jdbcType="DECIMAL" />
+    <result column="delflg" property="delflg" jdbcType="SMALLINT" />
+    <result column="reason" property="reason" jdbcType="VARCHAR" />
+    <result column="voice" property="voice" jdbcType="VARCHAR" />
+    <result column="detail" property="detail" jdbcType="VARCHAR" />
+    <result column="picurl" property="picurl" jdbcType="VARCHAR" />
+    <result column="addtime" property="addtime" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    orderid, ordernum, starttime, overtime, address, price, userid, workerid,companyid,typeid,counttime, 
+    type, content, fault, longitude, latitude, delflg, reason,voice,detail,picurl,addtime
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from t_order
+    where orderid = #{orderid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from t_order
+    where orderid = #{orderid,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByOrdernum" parameterType="java.lang.String" >
+    delete from t_order
+    where ordernum = #{ordernum,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.xiuluo.model.aboutUs.Order" >
+    insert into t_order (orderid, ordernum, starttime, 
+      overtime, address, price, 
+      userid, workerid,companyid,typeid,counttime, 
+      type, content, fault, 
+      longitude, latitude, delflg, 
+      reason,voice, detail,picurl,addtime)
+    values (#{orderid,jdbcType=INTEGER}, #{ordernum,jdbcType=VARCHAR}, #{starttime,jdbcType=TIMESTAMP}, 
+      #{overtime,jdbcType=TIMESTAMP}, #{address,jdbcType=VARCHAR}, #{price,jdbcType=DECIMAL}, 
+      #{userid,jdbcType=INTEGER}, #{workerid,jdbcType=INTEGER},#{companyid,jdbcType=INTEGER},#{typeid,jdbcType=INTEGER}, #{counttime,jdbcType=VARCHAR}, 
+      #{type,jdbcType=SMALLINT}, #{content,jdbcType=VARCHAR}, #{fault,jdbcType=VARCHAR}, 
+      #{longitude,jdbcType=DECIMAL}, #{latitude,jdbcType=DECIMAL}, #{delflg,jdbcType=SMALLINT}, 
+      #{reason,jdbcType=VARCHAR}, #{voice,jdbcType=VARCHAR},#{detail,jdbcType=VARCHAR},#{picurl,jdbcType=VARCHAR}#{addtime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.xiuluo.model.aboutUs.Order" >
+    insert into t_order
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="orderid != null" >
+        orderid,
+      </if>
+      <if test="ordernum != null" >
+        ordernum,
+      </if>
+      <if test="starttime != null" >
+        starttime,
+      </if>
+      <if test="overtime != null" >
+        overtime,
+      </if>
+      <if test="address != null" >
+        address,
+      </if>
+      <if test="price != null" >
+        price,
+      </if>
+      <if test="userid != null" >
+        userid,
+      </if>
+      <if test="workerid != null" >
+        workerid,
+      </if>
+      <if test="companyid != null" >
+        companyid,
+      </if>
+      <if test="typeid != null" >
+        typeid,
+      </if>
+      <if test="counttime != null" >
+        counttime,
+      </if>
+      <if test="type != null" >
+        type,
+      </if>
+      <if test="content != null" >
+        content,
+      </if>
+      <if test="fault != null" >
+        fault,
+      </if>
+      <if test="longitude != null" >
+        longitude,
+      </if>
+      <if test="latitude != null" >
+        latitude,
+      </if>
+      <if test="delflg != null" >
+        delflg,
+      </if>
+      <if test="reason != null" >
+        reason,
+      </if>
+      <if test="voice != null" >
+        voice,
+      </if>
+      <if test="detail != null" >
+        detail,
+      </if>
+      <if test="picurl != null" >
+        picurl,
+      </if>
+      <if test="addtime != null" >
+        addtime,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="orderid != null" >
+        #{orderid,jdbcType=INTEGER},
+      </if>
+      <if test="ordernum != null" >
+        #{ordernum,jdbcType=VARCHAR},
+      </if>
+      <if test="starttime != null" >
+        #{starttime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="overtime != null" >
+        #{overtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="address != null" >
+        #{address,jdbcType=VARCHAR},
+      </if>
+      <if test="price != null" >
+        #{price,jdbcType=DECIMAL},
+      </if>
+      <if test="userid != null" >
+        #{userid,jdbcType=INTEGER},
+      </if>
+      <if test="workerid != null" >
+        #{workerid,jdbcType=INTEGER},
+      </if>
+      <if test="companyid != null" >
+        #{companyid,jdbcType=INTEGER},
+      </if>
+      <if test="typeid != null" >
+        #{typeid,jdbcType=INTEGER},
+      </if>
+      <if test="counttime != null" >
+        #{counttime,jdbcType=VARCHAR},
+      </if>
+      <if test="type != null" >
+        #{type,jdbcType=SMALLINT},
+      </if>
+      <if test="content != null" >
+        #{content,jdbcType=VARCHAR},
+      </if>
+      <if test="fault != null" >
+        #{fault,jdbcType=VARCHAR},
+      </if>
+      <if test="longitude != null" >
+        #{longitude,jdbcType=DECIMAL},
+      </if>
+      <if test="latitude != null" >
+        #{latitude,jdbcType=DECIMAL},
+      </if>
+      <if test="delflg != null" >
+        #{delflg,jdbcType=SMALLINT},
+      </if>
+      <if test="reason != null" >
+        #{reason,jdbcType=VARCHAR},
+      </if>
+      <if test="voice != null" >
+        #{voice,jdbcType=VARCHAR},
+      </if>
+      <if test="detail != null" >
+        #{detail,jdbcType=VARCHAR},
+      </if>
+      <if test="picurl != null" >
+        #{picurl,jdbcType=VARCHAR},
+      </if>
+      <if test="addtime != null" >
+        #{addtime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.xiuluo.model.aboutUs.Order" >
+    update t_order
+    <set >
+      <if test="ordernum != null" >
+        ordernum = #{ordernum,jdbcType=VARCHAR},
+      </if>
+      <if test="starttime != null" >
+        starttime = #{starttime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="overtime != null" >
+        overtime = #{overtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="address != null" >
+        address = #{address,jdbcType=VARCHAR},
+      </if>
+      <if test="price != null" >
+        price = #{price,jdbcType=DECIMAL},
+      </if>
+      <if test="userid != null" >
+        userid = #{userid,jdbcType=INTEGER},
+      </if>
+      <if test="workerid != null" >
+        workerid = #{workerid,jdbcType=INTEGER},
+      </if>
+      <if test="companyid != null" >
+        companyid = #{companyid,jdbcType=INTEGER},
+      </if>
+      <if test="typeid != null" >
+        typeid = #{typeid,jdbcType=INTEGER},
+      </if>
+      <if test="counttime != null" >
+        counttime = #{counttime,jdbcType=VARCHAR},
+      </if>
+      <if test="type != null" >
+        type = #{type,jdbcType=SMALLINT},
+      </if>
+      <if test="content != null" >
+        content = #{content,jdbcType=VARCHAR},
+      </if>
+      <if test="fault != null" >
+        fault = #{fault,jdbcType=VARCHAR},
+      </if>
+      <if test="longitude != null" >
+        longitude = #{longitude,jdbcType=DECIMAL},
+      </if>
+      <if test="latitude != null" >
+        latitude = #{latitude,jdbcType=DECIMAL},
+      </if>
+      <if test="delflg != null" >
+        delflg = #{delflg,jdbcType=SMALLINT},
+      </if>
+      <if test="reason != null" >
+        reason = #{reason,jdbcType=VARCHAR},
+      </if>
+      <if test="voice != null" >
+        voice = #{voice,jdbcType=VARCHAR},
+      </if>
+      <if test="detail != null" >
+        detail = #{detail,jdbcType=VARCHAR},
+      </if>
+      <if test="picurl != null" >
+        picurl = #{picurl,jdbcType=VARCHAR},
+      </if>
+      <if test="addtime != null" >
+        addtime = #{addtime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where orderid = #{orderid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.xiuluo.model.aboutUs.Order" >
+    update t_order
+    set ordernum = #{ordernum,jdbcType=VARCHAR},
+      starttime = #{starttime,jdbcType=TIMESTAMP},
+      overtime = #{overtime,jdbcType=TIMESTAMP},
+      address = #{address,jdbcType=VARCHAR},
+      price = #{price,jdbcType=DECIMAL},
+      userid = #{userid,jdbcType=INTEGER},
+      workerid = #{workerid,jdbcType=INTEGER},
+      companyid = #{companyid,jdbcType=INTEGER},
+      typeid = #{typeid,jdbcType=INTEGER},
+      counttime = #{counttime,jdbcType=VARCHAR},
+      type = #{type,jdbcType=SMALLINT},
+      content = #{content,jdbcType=VARCHAR},
+      fault = #{fault,jdbcType=VARCHAR},
+      longitude = #{longitude,jdbcType=DECIMAL},
+      latitude = #{latitude,jdbcType=DECIMAL},
+      delflg = #{delflg,jdbcType=SMALLINT},
+      reason = #{reason,jdbcType=VARCHAR},
+      voice = #{voice,jdbcType=VARCHAR},
+      detail = #{detail,jdbcType=VARCHAR},
+      picurl = #{picurl,jdbcType=VARCHAR},
+      addtime = #{addtime,jdbcType=TIMESTAMP}
+    where orderid = #{orderid,jdbcType=INTEGER}
+  </update>
+  
+  <select id="selectTypeByTypeid" resultMap="BaseResultMap" >
+    select *
+    from t_order
+    where type = 0 and delflg = 0 and typeid = #{typeid} and companyid = 0
+    order by addtime desc
+  </select>
+  <select id="selectTypeByCompanyid" resultMap="BaseResultMap" >
+    select *
+    from t_order
+    where type = 0 and delflg = 0 and companyid = #{companyid}
+    order by addtime desc
+  </select>
+  <select id="selectundonebyuserid" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select *
+    from t_order
+    where userid=#{userid} and type in (0,1,2,3) and delflg = 0 order by addtime desc
+  </select>
+  <select id="selectdonebyuserid" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select *
+    from t_order
+    where userid=#{userid} and type = 4 and delflg = 0 order by addtime desc
+  </select>
+  <select id="selectundonebyworkerid" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select *
+    from t_order
+    where workerid=#{workerid} and type in (1,2,3) and delflg = 0 order by addtime desc
+  </select>
+  <select id="selectdonebyworkerid" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select *
+    from t_order
+    where workerid=#{workerid} and type = 4 and delflg = 0 order by addtime desc
+  </select>
+  <select id="selectbyworkerid" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select *
+    from t_order
+    where workerid=#{workerid} and delflg = 0 order by addtime desc
+  </select>
+  <select id="selectCountOrderNum" resultType="java.lang.Integer">
+    select count(*) 
+    from t_order
+    <![CDATA[ where hour(addtime) = hour(now()) ]]>
+  </select>
+  <select id="newuserorder" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select *
+    from t_order
+    where userid=#{userid}  and type = 0 and delflg = 0 order by addtime desc LIMIT 0,1 
+  </select>
+  <select id="selectall" resultMap="BaseResultMap" >
+    select *
+    from t_order where ordernum like '%A%' or ordernum like '%B%'
+  </select>
+  <select id="selectbyordernum" resultMap="BaseResultMap" >
+    select *
+    from t_order where ordernum = #{ordernum}
+  </select>
+  <select id="selectneworder" resultMap="BaseResultMap" >
+    select * from t_order where userid = #{userid} and delflg = 0 order by addtime desc  limit 0,1;
+  </select>
+  <select id="selectpayorder" resultMap="BaseResultMap" >
+    select * from t_order where workerid = #{workerid} and type in (0,1,2) and delflg = 0;
+  </select>
+  <select id="selectuserfirstorder" resultMap="BaseResultMap" >
+    select * from t_order where userid = #{userid} and delflg = 0 order by addtime desc  limit 0,1;
+  </select>
+  <select id="selectworkerfirstorder" resultMap="BaseResultMap" >
+    select * from t_order where workerid = #{workerid} and delflg = 0 order by addtime desc  limit 0,1;
+  </select>
+</mapper>

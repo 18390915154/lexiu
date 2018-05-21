@@ -1,0 +1,41 @@
+<ion-view hide-nav-bar="true" class="person">
+	<ion-content>
+		<div class="has-header header">
+			<h1>我的</h1>
+			<div class="pic" ng-click="goto()"><img src="{{$parent.src}}"> </div>
+			<p  ng-click="login()">{{name}}</p>
+		</div>
+		<div class="list">
+			<div class="item item-avatar item-icon-left item-icon-right" ng-click="gtWallet()">
+				<i class="icon bar-wallet"></i>
+				<h2>我的钱包</h2>
+				<i class="icon ion-chevron-right"></i>
+			</div>
+			<div class="item item-avatar item-icon-left item-icon-right" ng-click="gtComment()">
+				<i class="icon bar-comment"></i>
+				<h2>我的评价</h2>
+				<i class="icon ion-chevron-right"></i>
+			</div>
+			<div class="item item-avatar item-icon-left item-icon-right lg" style="display: block;" ng-click="gtId()">
+				<i class="icon bar-lg"></i>
+				<h2>注册零工</h2>
+				<i class="icon ion-chevron-right"></i>
+			</div>
+			<div class="item item-avatar item-icon-left item-icon-right llg" style="display: none">
+				<i class="icon bar-lg"></i>
+				<h2>已注册零工</h2>
+			</div>
+			<div class="item item-avatar item-icon-left item-icon-right" ng-click="share()">
+				<i class="icon bar-share"></i>
+				<h2>分享给朋友</h2>
+				<i class="icon ion-chevron-right"></i>
+			</div>
+			<div class="item item-avatar item-icon-left item-icon-right" ng-click="gtSetting()">
+				<i class="icon bar-setting"></i>
+				<h2>设置</h2>
+				<i class="icon ion-chevron-right" ></i>
+			</div>
+		</div>
+
+	</ion-content>
+</ion-view>

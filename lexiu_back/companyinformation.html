@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>公司管理</title>
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/companyinformation.css" rel="stylesheet">
+    <link href="media/css/jquery.dataTables.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="media/js/jquery.dataTables.min.js"></script>
+    <script src="js/jquery.easing.min.js"></script>
+    <script src="js/style.js"></script>
+    <script src="js/companyinformation.js"></script>
+</head>
+<body>
+<div class="wrap">
+    <div class="inner">
+        <div class="title">公司信息<a href='javascript:;' class='add'><i class='fa fa-arrow-down'></i> 新增</a></div>
+        <div class="companyBox">
+            <table id="generalForm" class="display" cellspacing="0" width="100%">
+                <thead>
+                <tr>
+                    <th>公司ID</th>
+                    <th>公司名称</th>
+                    <th>公司地址</th>
+                    <th>联系电话</th>
+                    <th>联系人</th>
+                    <th>操作</th>
+                </tr>
+                </thead>
+                <tbody id="list"></tbody>
+            </table>
+        </div>
+    </div>
+</div>
+</body>
+</html>

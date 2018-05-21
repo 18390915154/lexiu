@@ -1,0 +1,19 @@
+<ion-view class="login" hide-nav-bar="true">
+	<ion-header-bar class="header">
+		<i class="return icon ion-chevron-left" ui-sref="tour1"></i>
+		<div class="title">师傅登录</div>
+		<div class="register" ui-sref="register2_sf">注册</div>
+	</ion-header-bar>
+	<ion-content>
+		<div class="list">
+			<label class="item item-input">
+				<input type="text" placeholder="请输入账号" ng-required="true" ng-model="$parent.uname">
+			</label>
+			<label class="item item-input">
+				<input type="password" placeholder="请输入密码" ng-required="true" ng-model="$parent.upassd">
+			</label>
+		</div>
+		<span ui-sref="forgetCode1_sf">忘记密码?</span>
+		<button class="button button-block button-energized" ng-click="login()">登录</button>
+	</ion-content>
+</ion-view>

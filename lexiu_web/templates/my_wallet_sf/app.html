@@ -1,0 +1,27 @@
+<ion-view class="wallet" hide-nav-bar="true">
+	<ion-content>
+		<div class="list">
+			<div class="item">
+				<img src="images/wallet.jpg">
+				<div class="bar bar-header" style="background: none">
+					<!--<i class="icon ion-chevron-left jump" ui-sref="tabs_sf.person_sf"></i>-->
+					<i class="icon ion-chevron-left jump" ng-click="back()"></i>
+					<div class="title">我的钱包</div>
+					<div class="bank" ui-sref="bank_manage_sf">银行卡</div>
+				</div>
+				<div class="surplus">
+					<div class="number">￥{{number}}</div>
+					<p>剩余余额</p>
+				</div>
+				<div class="row">
+					<div class="col" ui-sref="chongzhi_type_sf">充值</div>
+					<div class="col" ui-sref="tixian_type_sf">提现</div>
+				</div>
+			</div>
+		</div>
+		<div class="wallet_jl">
+			<dl id="wallet_jl">
+			</dl>
+		</div>
+	</ion-content>
+</ion-view>

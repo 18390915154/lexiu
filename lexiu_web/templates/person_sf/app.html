@@ -1,0 +1,57 @@
+<ion-view class="personal" hide-nav-bar="true">
+	<ion-content>
+		<div class="header">
+			<div class="top">
+				<i class="icon ion-chevron-left" ui-sref="tabs_sf.person_sf"></i>
+				<h1>个人中心</h1>
+			</div>
+			<div class="pic"><img src="{{img}}"> </div>
+		</div>
+		<span>基本信息</span>
+		<div class="list">
+			<div class="item item-icon-right">
+				姓名
+				<div class="return">
+					{{name}}<i class="icon ion-chevron-right"></i>
+				</div>
+			</div>
+			<div class="item item-icon-right">
+				性别
+				<div class="return">
+					{{sex}}<i class="icon ion-chevron-right"></i>
+				</div>
+			</div>
+			<div class="item">
+				年龄
+				<div class="return">{{age}}</div>
+			</div>
+			<div class="item item-icon-right">
+				生日
+				<div class="return">
+					{{birthday}}<i class="icon ion-chevron-right"></i>
+				</div>
+			</div>
+			<div class="item">
+				联系方式
+				<div class="return">{{phone}}</div>
+			</div>
+			<div class="item">
+				紧急联系方式
+				<div class="return">{{soscontact}}</div>
+			</div>
+		</div>
+		<div class="list">
+			<div class="item">所属企业</div>
+			<div class="item">企业联系方式</div>
+			<div class="item">
+				身份证号码<div class="return">{{idsfz}}</div>
+			</div>
+			<div class="item">
+				工种<div class="return">{{work}}</div>
+			</div>
+			<div class="item">
+				擅长技能<br><div class="return">{{skill}}</div>
+			</div>
+		</div>
+	</ion-content>
+</ion-view>

@@ -1,0 +1,50 @@
+<ion-view class="donedetail_sf" view-title="订单详情">
+	<ion-content>
+		<div class="card has-header">
+			<ion-item class="item">
+				<div class="price">{{orderdetail.price}}元</div>
+				<div class="item item-icon-left all">
+					<i class="icon ion-ios-clock clock"></i>
+					共计用时{{orderdetail.counttime}}分钟
+				</div>
+			</ion-item>
+		</div>
+		<ion-item class="list">
+			<ion-item class="item item-avatar item-icon-right done_card">
+				<img src="https://www.lerlex.com/{{orderdetail.avatar}}">
+				<span>{{orderdetail.username}}</span>
+				<a class="icon bar-phone phone" href="tel:{{orderdetail.userphone}}"></a>
+			</ion-item>
+			<ion-item class="item item-icon-left">
+				<i class="icon ion-ios-clock  balanced"></i>
+				{{orderdetail.formatstart}}
+			</ion-item>
+			<ion-item class="item item-icon-left">
+				<i class="icon ion-ios-clock assertive"></i>
+				{{orderdetail.formatover}}
+			</ion-item>
+			<ion-item class="item item-icon-left">
+				<i class="icon ion-location"></i>
+				{{orderdetail.address}}
+			</ion-item>
+		</ion-item>
+		<ion-item class="list">
+			<ion-item class="item item-button-left discuss">
+				<button class="button">
+					<i class="icon ion-thumbsup"></i>
+				</button>
+				<span>{{assess.content}} {{assess.grade}}分</span>
+			</ion-item>
+		</ion-item>
+		<ion-item class="list">
+			<ion-item class="item">
+				服务内容:{{orderdetail.content}}
+			</ion-item>
+		</ion-item>
+        <ion-item class="list">
+			<ion-item class="item guzhang">
+				故障详情:<span>{{orderdetail.fault}}</span>
+			</ion-item>
+        </ion-item>
+	</ion-content>
+</ion-view>

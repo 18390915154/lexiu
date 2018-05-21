@@ -1,0 +1,42 @@
+<ion-view view-title="订单详情" class="donedetail">
+    <ion-content>
+        <div class="card">
+            <ion-item class="item">
+                <div class="price">{{order.price}}元</div>
+                <div class="item item-icon-left all">
+                    <i class="icon ion-ios-clock clock"></i>
+                    共计用时{{order.counttime}}分钟
+                </div>
+            </ion-item>
+        </div>
+        <ion-item class="list">
+            <ion-item class="item item-avatar item-icon-right done_card one">
+                <img src="https://www.lerlex.com/{{worker.avatar}}" class="imgss">
+                <span>{{worker.nickname}}</span>
+                <a class="icon bar-phone phone" href="tel:{{worker.phone}}"></a>
+            </ion-item>
+            <ion-item class="item item-icon-left">
+                <i class="icon ion-ios-clock  balanced"></i>
+                {{order.formatstart}}
+            </ion-item>
+            <ion-item class="item item-icon-left">
+                <i class="icon ion-ios-clock assertive"></i>
+                {{order.formatover}}
+            </ion-item>
+            <ion-item class="item item-icon-left">
+                <i class="icon ion-location"></i>
+                {{order.address}}
+            </ion-item>
+        </ion-item>
+        <div class="item item-borderless words">
+            <i class="icon ion-volume-high liuyan"></i>
+            <button class="button button-outline button-stable" ng-click="play()">单击听取留言</button>
+        </div>
+        <div class="item btn1">
+            <button class="button button-block submit" ng-click="goPay()" ng-hide="$parent.hidezf">支付</button>
+        </div>
+        <div class="item btn2">
+            <button class="button button-block submit" ng-click="goPing()" ng-hide="$parent.hidepj">立即评价</button>
+        </div>
+        <ion-content>
+</ion-view>

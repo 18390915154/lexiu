@@ -1,0 +1,260 @@
+<ion-view class="place_order" title="下单预约">
+	<ion-content overflow-scroll="false">
+	<form id="place_order" enctype="multipart/form-data" novalidate="novalidate" method="post">
+		<input name="longitude" id="longitude" type="hidden"  value="" />
+		<input name="latitude" id="latitude" type="hidden"  value="" />
+		<input name="userid" id="userid" type="hidden"  value="" />
+		<input name="companyid" id="companyid" type="hidden"  value="" />
+		<div class="item service">
+			服务需求<div class="service_type">{{type_jz}}</div>
+			<input name="typeid" id="typeid" type="hidden"  value="" />
+		</div>
+		<input name="address" id="address" type="hidden"  value="" />
+		<div class="item address">
+			<h1>服务地址</h1>
+			<div class="item item-icon-right">
+				<div class="specific_address">{{specific_address}}</div>
+				<i class="icon ion-chevron-right" ui-sref="service_address({type:type,companyid:companyid,company_longitude:company_longitude,company_latitude:company_latitude})"></i>
+			</div>
+			<input type="text" class="complete" placeholder="完善单元及门牌号" ng-model=" $parent.specific_address_1"/>
+		</div>
+		<div class="item item-icon-right times">
+			预约时间
+			<time-picker title="下单时间" dateNum="20" yearNum="30" time-picker-result="result" style="width: 40vw;float: right;height: 100%;text-align: center;" class="clock"></time-picker>
+			<i class="icon ion-chevron-right" ></i>
+			<input name="starttime" id="starttime" type="text" style="display: none;" value="" />
+		</div>
+		<div class="item pic">
+			<h1>添加图片</h1>
+			<div class="add_pic">
+				<img src="images/id_card.jpg" class="fileimg1">
+				<a href="javascript:;" class="file" >
+					<input type="file" id="uploadFile" runat="server" name="myfiles" ng-model="myfiles" onchange="getPhoto1(this)" />
+				</a>
+				<span class="prompt">最多可添加6张</span>
+			</div>
+		</div>
+		<div class="item">
+			<h1>备注说明</h1>
+			<textarea placeholder="请再此处添加对服务的简单描述(50字内)" class="remarks" ng-model="$parent.detail"></textarea>
+			<input name="detail" id="detail" type="text" style="display: none;" value="" />
+		</div>
+		<button class="button button-block" ng-click="jump()">预约下单</button>
+	</form>
+	</ion-content>
+	<script type="text/javascript">
+		var imgurl = "";
+		var flag1 = true;
+		var flag2 = true;
+		var flag3 = true;
+		var flag4 = true;
+		var flag5 = true;
+		var flag6 = true;
+		function getPhoto1(node){
+			var imgURL = "";
+			try {
+				var file = null;
+				if(node.files && node.files[0]) {
+					file = node.files[0];
+				} else if(node.files && node.files.item(0)) {
+					file = node.files.item(0);
+				}
+				//Firefox 因安全性问题已无法直接通过input[file].value 获取完整的文件路径
+				try {
+					imgURL = file.getAsDataURL();
+				} catch(e) {
+					imgRUL1 = window.URL.createObjectURL(file);
+				}
+			} catch(e) {
+				if(node.files && node.files[0]) {
+					var reader = new FileReader();
+					reader.onload = function(e) {
+						imgURL = e.target.result;
+					};
+					reader.readAsDataURL(node.files[0]);
+				}
+			}
+			$('.fileimg1').attr('src', imgRUL1);
+			console.log(imgRUL1);
+			if(imgRUL1!="" && flag1==true){
+				var oPrompt=document.getElementsByClassName("prompt")[0];
+				oPrompt.style.display="none";
+				flag1 = false;
+				var pic=document.getElementsByClassName("pic")[0];
+				angular.element(pic).append('<div class="add_pic"><img src="images/id_card.jpg" class="fileimg2"><a href="javascript:;" class="file" ><input type="file" runat="server" name="myfiles" ng-model="myfiles" onchange="getPhoto2(this)" /></a></div>');
+				console.log(pic);
+			}
+			return imgURL;
+		}
+		function getPhoto2(node){
+			var imgURL = "";
+			try {
+				var file = null;
+				if(node.files && node.files[0]) {
+					file = node.files[0];
+				} else if(node.files && node.files.item(0)) {
+					file = node.files.item(0);
+				}
+				//Firefox 因安全性问题已无法直接通过input[file].value 获取完整的文件路径
+				try {
+					imgURL = file.getAsDataURL();
+				} catch(e) {
+					imgRUL2 = window.URL.createObjectURL(file);
+				}
+			} catch(e) {
+				if(node.files && node.files[0]) {
+					var reader = new FileReader();
+					reader.onload = function(e) {
+						imgURL = e.target.result;
+					};
+					reader.readAsDataURL(node.files[0]);
+				}
+			}
+			$('.fileimg2').attr('src', imgRUL2);
+			console.log(imgRUL2);
+			if(imgRUL2!="" && flag2==true){
+				flag2=false;
+				var pic=document.getElementsByClassName("pic")[0];
+				angular.element(pic).append('<div class="add_pic"><img src="images/id_card.jpg" class="fileimg3"><a href="javascript:;" class="file" ><input type="file" runat="server" name="myfiles" ng-model="myfiles" onchange="getPhoto3(this)" /></a></div>');
+				console.log(pic)
+			}
+			return imgURL;
+		}
+		function getPhoto3(node){
+			var imgURL = "";
+			try {
+				var file = null;
+				if(node.files && node.files[0]) {
+					file = node.files[0];
+				} else if(node.files && node.files.item(0)) {
+					file = node.files.item(0);
+				}
+				//Firefox 因安全性问题已无法直接通过input[file].value 获取完整的文件路径
+				try {
+					imgURL = file.getAsDataURL();
+				} catch(e) {
+					imgRUL3 = window.URL.createObjectURL(file);
+				}
+			} catch(e) {
+				if(node.files && node.files[0]) {
+					var reader = new FileReader();
+					reader.onload = function(e) {
+						imgURL = e.target.result;
+					};
+					reader.readAsDataURL(node.files[0]);
+				}
+			}
+			$('.fileimg3').attr('src', imgRUL3);
+			console.log(imgRUL3);
+			if(imgRUL3!="" && flag3==true){
+				flag3=false;
+				var pic=document.getElementsByClassName("pic")[0];
+				angular.element(pic).append('<div class="add_pic"><img src="images/id_card.jpg" class="fileimg4"><a href="javascript:;" class="file" ><input type="file" runat="server" name="myfiles" ng-model="myfiles" onchange="getPhoto4(this)" /></a></div>');
+				console.log(pic)
+			}
+			return imgURL;
+		}
+		function getPhoto4(node){
+			var imgURL = "";
+			try {
+				var file = null;
+				if(node.files && node.files[0]) {
+					file = node.files[0];
+				} else if(node.files && node.files.item(0)) {
+					file = node.files.item(0);
+				}
+				//Firefox 因安全性问题已无法直接通过input[file].value 获取完整的文件路径
+				try {
+					imgURL = file.getAsDataURL();
+				} catch(e) {
+					imgRUL4 = window.URL.createObjectURL(file);
+				}
+			} catch(e) {
+				if(node.files && node.files[0]) {
+					var reader = new FileReader();
+					reader.onload = function(e) {
+						imgURL = e.target.result;
+					};
+					reader.readAsDataURL(node.files[0]);
+				}
+			}
+			$('.fileimg4').attr('src', imgRUL4);
+			console.log(imgRUL4);
+			if(imgRUL4!="" && flag4==true){
+				flag4=false;
+				var pic=document.getElementsByClassName("pic")[0];
+				angular.element(pic).append('<div class="add_pic"><img src="images/id_card.jpg" class="fileimg5"><a href="javascript:;" class="file" ><input type="file" runat="server" name="myfiles" ng-model="myfiles" onchange="getPhoto5(this)" /></a></div>');
+				console.log(pic)
+			}
+			return imgURL;
+		}
+		function getPhoto5(node){
+			var imgURL = "";
+			try {
+				var file = null;
+				if(node.files && node.files[0]) {
+					file = node.files[0];
+				} else if(node.files && node.files.item(0)) {
+					file = node.files.item(0);
+				}
+				//Firefox 因安全性问题已无法直接通过input[file].value 获取完整的文件路径
+				try {
+					imgURL = file.getAsDataURL();
+				} catch(e) {
+					imgRUL5 = window.URL.createObjectURL(file);
+				}
+			} catch(e) {
+				if(node.files && node.files[0]) {
+					var reader = new FileReader();
+					reader.onload = function(e) {
+						imgURL = e.target.result;
+					};
+					reader.readAsDataURL(node.files[0]);
+				}
+			}
+			$('.fileimg5').attr('src', imgRUL5);
+			console.log(imgRUL5);
+			if(imgRUL5!="" && flag5==true){
+				flag5=false;
+				var pic=document.getElementsByClassName("pic")[0];
+				angular.element(pic).append('<div class="add_pic"><img src="images/id_card.jpg" class="fileimg6"><a href="javascript:;" class="file" ><input type="file" runat="server" name="myfiles" ng-model="myfiles" onchange="getPhoto6(this)" /></a></div>');
+				console.log(pic)
+			}
+			return imgURL;
+		}
+		function getPhoto6(node){
+			var imgURL = "";
+			try {
+				var file = null;
+				if(node.files && node.files[0]) {
+					file = node.files[0];
+				} else if(node.files && node.files.item(0)) {
+					file = node.files.item(0);
+				}
+				//Firefox 因安全性问题已无法直接通过input[file].value 获取完整的文件路径
+				try {
+					imgURL = file.getAsDataURL();
+				} catch(e) {
+					imgRUL6 = window.URL.createObjectURL(file);
+				}
+			} catch(e) {
+				if(node.files && node.files[0]) {
+					var reader = new FileReader();
+					reader.onload = function(e) {
+						imgURL = e.target.result;
+					};
+					reader.readAsDataURL(node.files[0]);
+				}
+			}
+			$('.fileimg6').attr('src', imgRUL6);
+			console.log(imgRUL6);
+			if(imgRUL6!="" && flag6==true) {
+				flag6 = false;
+			}
+			return imgURL;
+		}
+	</script>
+</ion-view>
+
+
+

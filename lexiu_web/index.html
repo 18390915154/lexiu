@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"/>
+    <!--拨打电话-->
+    <meta name="format-detection" content="telephone=yes"/>
+    <title>乐修</title>
+    <link type="text/css" href="css/media.css" rel="stylesheet">
+    <link type="text/css" href="css/font-awesome.min.css" rel="stylesheet">
+    <link type="text/css" href="lib/ionic/css/ionic.css" rel="stylesheet">
+    <link type="text/css" href="css/style.css" rel="stylesheet">
+    <link href="lib/timepicer/timePicker.css" rel="stylesheet">
+    <script type="text/javascript" src="js/jquery-3.1.0.js"></script>
+    <!--手机返回按钮的调用需用到-->
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="lib/ionic/js/ionic.bundle.js"></script>
+    <script language="javascript" src="lib/timepicer/timePicker.js"></script>
+    <script type="text/javascript" src="js/app.js"></script>
+    <!--<script type="text/javascript" src="js/btn.js"></script>-->
+    <script type="text/javascript" src="templates/tour/tourCtrl.js"></script>
+    <script type="text/javascript" src="templates/tour1/tourCtrl.js"></script>
+    <script type="text/javascript" src="templates/home/appCtrl.js"></script>
+    <script type="text/javascript" src="templates/quxiao_order_sf/appCtrl.js"></script>
+    <script type="text/javascript" src="templates/shop/appCtrl.js"></script>
+    <script type="text/javascript" src="templates/shop2/appCtrl.js"></script>
+    <script type="text/javascript" src="templates/my/appCtrl.js"></script>
+    <script type="text/javascript" src="templates/my_wallet/appCtrl.js"></script>
+    <script type="text/javascript" src="templates/chongzhi_type/appCtrl.js"></script>
+    <script type="text/javascript" src="templates/tixian_type/appCtrl.js"></script>
+    <script type="text/javascript" src="templates/wancheng/appCtrl.js"></script>
+    <script type="text/javascript" src="templates/wancheng_detail/appCtrl.js"></script>
+    <script type="text/javascript" src="templates/daiwancheng/appCtrl.js"></script>
+    <script type="text/javascript" src="templates/daiwancheng/todoneCtrl.js"></script>
+    <script type="text/javascript" src="templates/daiwancheng_detail/appCtrl.js"></script>
+    <script type="text/javascript" src="templates/comment/appCtrl.js"></script>
+    <script type="text/javascript" src="templates/comment1/appCtrl.js"></script>
+    <script type="text/javascript" src="templates/payfor/appCtrl.js"></script>
+    <script type="text/javascript" src="templates/chongzhi/appCtrl.js"></script>
+    <script type="text/javascript" src="templates/tixian/appCtrl.js"></script>
+    <script type="text/javascript" src="templates/add_bank/appCtrl.js"></script>
+    <script type="text/javascript" src="templates/add_bank1/appCtrl.js"></script>
+    <script type="text/javascript" src="templates/blank_gl/appCtrl.js"></script>
+    <script type="text/javascript" src="templates/person/appCtrl.js"></script>
+    <script type="text/javascript" src="templates/xiugai_mima/appCtrl.js"></script>
+    <script type="text/javascript" src="templates/xiugai_mima1/appCtrl.js"></script>
+    <script type="text/javascript" src="templates/lose_mima/appCtrl.js"></script>
+    <script type="text/javascript" src="templates/lose_mima1/appCtrl.js"></script>
+    <script type="text/javascript" src="templates/setting_pay/appCtrl.js"></script>
+    <script type="text/javascript" src="templates/setting_pay1/appCtrl.js"></script>
+    <script type="text/javascript" src="templates/safe_setting/appCtrl.js"></script>
+    <script type="text/javascript" src="templates/jianyi/appCtrl.js"></script>
+    <script type="text/javascript" src="templates/jifen/appCtrl.js"></script>
+    <script type="text/javascript" src="templates/setting/appCtrl.js"></script>
+    <script type="text/javascript" src="templates/login/appCtrl.js"></script>
+    <script type="text/javascript" src="templates/shifu_zhuce/appCtrl.js"></script>
+    <script type="text/javascript" src="templates/shifu_zhuce1/appCtrl.js"></script>
+    <script type="text/javascript" src="templates/id/appCtrl.js"></script>
+    <script type="text/javascript" src="templates/about/appCtrl.js"></script>
+    <script type="text/javascript" src="templates/map/appCtrl.js"></script>
+    <script type="text/javascript" src="templates/revise_address/appCtrl.js"></script>
+    <!--师傅端-->
+    <script type="text/javascript" src="templates/home_s/appCtrl.js"></script>
+    <script type="text/javascript" src="templates/home_sf/appCtrl.js"></script>
+    <script type="text/javascript" src="templates/shop_sf/appCtrl.js"></script>
+    <script type="text/javascript" src="templates/shop2_sf/appCtrl.js"></script>
+    <script type="text/javascript" src="templates/my_sf/appCtrl.js"></script>
+    <script type="text/javascript" src="templates/my_wallet_sf/appCtrl.js"></script>
+    <script type="text/javascript" src="templates/chongzhi_type_sf/appCtrl.js"></script>
+    <script type="text/javascript" src="templates/tixian_type_sf/appCtrl.js"></script>
+    <script type="text/javascript" src="templates/wancheng_sf/appCtrl.js"></script>
+    <script type="text/javascript" src="templates/wancheng_detail_sf/appCtrl.js"></script>
+    <script type="text/javascript" src="templates/daiwancheng_sf/appCtrl.js"></script>
+    <script type="text/javascript" src="templates/daiwancheng_sf/todoneCtrl.js"></script>
+    <script type="text/javascript" src="templates/daiwancheng_detail_sf/appCtrl.js"></script>
+    <script type="text/javascript" src="templates/baojiegongdan_sf/appCtrl.js"></script>
+    <script type="text/javascript" src="templates/baojiegongdan_sf_jz/appCtrl.js"></script>
+    <script type="text/javascript" src="templates/comment_sf/appCtrl.js"></script>
+    <script type="text/javascript" src="templates/comment1_sf/appCtrl.js"></script>
+    <script type="text/javascript" src="templates/payfor_sf/appCtrl.js"></script>
+    <script type="text/javascript" src="templates/chongzhi_sf/appCtrl.js"></script>
+    <script type="text/javascript" src="templates/tixian_sf/appCtrl.js"></script>
+    <script type="text/javascript" src="templates/add_bank_sf/appCtrl.js"></script>
+    <script type="text/javascript" src="templates/add_bank1_sf/appCtrl.js"></script>
+    <script type="text/javascript" src="templates/blank_gl_sf/appCtrl.js"></script>
+    <script type="text/javascript" src="templates/person_sf/appCtrl.js"></script>
+    <script type="text/javascript" src="templates/xiugai_mima_sf/appCtrl.js"></script>
+    <script type="text/javascript" src="templates/xiugai_mima1_sf/appCtrl.js"></script>
+    <script type="text/javascript" src="templates/lose_mima_sf/appCtrl.js"></script>
+    <script type="text/javascript" src="templates/lose_mima1_sf/appCtrl.js"></script>
+    <script type="text/javascript" src="templates/setting_pay_sf/appCtrl.js"></script>
+    <script type="text/javascript" src="templates/setting_pay1_sf/appCtrl.js"></script>
+    <script type="text/javascript" src="templates/safe_setting_sf/appCtrl.js"></script>
+    <script type="text/javascript" src="templates/jianyi_sf/appCtrl.js"></script>
+    <script type="text/javascript" src="templates/jifen_sf/appCtrl.js"></script>
+    <script type="text/javascript" src="templates/setting_sf/appCtrl.js"></script>
+    <script type="text/javascript" src="templates/login_sf/appCtrl.js"></script>
+    <script type="text/javascript" src="templates/shifu_zhuce_sf/appCtrl.js"></script>
+    <script type="text/javascript" src="templates/shifu_zhuce1_sf/appCtrl.js"></script>
+    <script type="text/javascript" src="templates/id_sf/appCtrl.js"></script>
+    <script type="text/javascript" src="templates/about_sf/appCtrl.js"></script>
+    <script type="text/javascript" src="templates/map5_sf/appCtrl.js"></script>
+    <!--分享-->
+    <script type="text/javascript" src="templates/share/appCtrl.js"></script>
+    <!--价格指导-->
+    <script type="text/javascript" src="templates/price_guide/appCtrl.js"></script>
+    <!--家政服务-->
+    <script type="text/javascript" src="templates/jz/appCtrl.js"></script>
+    <!--家政服务-->
+    <script type="text/javascript" src="templates/jz_company/appCtrl.js"></script>
+    <!--下单预约-->
+    <script type="text/javascript" src="templates/place_order/appCtrl.js"></script>
+    <!--服务地址-->
+    <script type="text/javascript" src="templates/service_address/appCtrl.js"></script>
+    <!--实时定位-->
+    <script type="text/javascript" src="templates/index/appCtrl.js"></script>
+    <!--百度地图-->
+    <script type="text/javascript" src="https://api.map.baidu.com/api?v=2.0&services=true&ak=9oQLbl2MQ7C9lFDXpOeFhVFmp7CvDySq&s=1"></script>
+</head>
+<body ng-app="myapp" ng-controller="indexCtrl">
+<ion-nav-bar class="bar-light">
+    <ion-nav-back-button style="border-color:#fff;">
+        <i class="ion-chevron-left" style="font-size: 1.5rem;color: #333;"></i>
+    </ion-nav-back-button>
+</ion-nav-bar>
+<ion-nav-view></ion-nav-view>
+</body>
+</html>
+

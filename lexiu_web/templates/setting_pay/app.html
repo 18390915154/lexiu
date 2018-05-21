@@ -1,0 +1,17 @@
+<ion-view view-title="设置支付密码">
+	<ion-content class="setting_pay">
+		<div class="list">
+			<label class="item item-input">
+				<input type="text" placeholder="请输入绑定的手机号即账号" ng-model="$parent.user">
+			</label>
+			<div class="item item-input-inset  item-button-right">
+				<label class="item-input-wrapper">
+					<input type="text" placeholder="输入短信验证码"  ng-model="$parent.code">
+
+				</label>
+				<button class="button button-small " ng-click="get()" ng-disabled="spot" style="top:10px;">{{time}}</button>
+			</div>
+		</div>
+		<button class="button button-block btn1" ng-click="next()">下一步</button>
+	</ion-content>
+</ion-view>

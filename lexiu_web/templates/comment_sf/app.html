@@ -1,0 +1,73 @@
+<ion-view view-title="评价">
+	<ion-content class="comment">
+		<div class="comment_inner">
+			<div class="content">
+				<div class="img">
+					<img src="images/D评价_01.jpg">
+				</div>
+				<div class="words">
+					<h2>王师傅</h2>
+					<div class="all">
+						<a href="javascript:;">
+							<i class="icon ion-star energized"></i>
+							<i class="icon ion-star energized"></i>
+							<i class="icon ion-star energized"></i>
+							<i class="icon ion-star energized"></i>
+							<i class="icon ion-ios-star-outline energized"></i>
+						</a>
+						<div class="number">4.50</div>
+					</div>
+				</div>
+			</div>
+			<div class="order">订单详情</div>
+			<span>服务内容:空调不制冷</span>
+			<span>2017-01-02 09:35</span>
+			<div class="spot" ng-repeat="item in stars">
+				<a href="javascript:;" ng-repeat="star in item.content">
+					<i class="icon {{star.icon}} energized" ng-click="setRating(item.id, star.value)"></i>
+				</a>
+			</div>
+			<div class="row">
+				<div class="col">很有耐心
+					<!--<ion-checkbox ng-model="filter1">Red</ion-checkbox>-->
+				</div>
+				<div class="col">很有耐心
+					<!--<ion-checkbox ng-model="filter2">Red</ion-checkbox>-->
+				</div>
+				<div class="col">很有耐心
+					<!--<ion-checkbox ng-model="filter3">Red</ion-checkbox>-->
+				</div>
+			</div>
+			<div class="row row2">
+				<div class="col">很有耐心
+					<!--<ion-checkbox ng-model="filter1">Red</ion-checkbox>-->
+				</div>
+				<div class="col">很有耐心
+					<!--<ion-checkbox ng-model="filter2">Red</ion-checkbox>-->
+				</div>
+				<div class="col">很有耐心
+					<!--<ion-checkbox ng-model="filter3">Red</ion-checkbox>-->
+				</div>
+			</div>
+			<!--<div class="row">
+				<div class="col">
+					<ion-checkbox ng-model="filter4">Red</ion-checkbox>
+				</div>
+				<div class="col">
+					<ion-checkbox ng-model="filter5">Red</ion-checkbox>
+				</div>
+				<div class="col">
+					<ion-checkbox ng-model="filter6">Red</ion-checkbox>
+				</div>
+			</div>-->
+
+			</ion-list>
+		</div>
+		<div class="item btn1">
+			<!--<label for="radio1">a<input type="radio" id="radio1" style="opacity: 0;"></label>
+			<label for="radio1">a</label><input type="radio" id="radio1">
+			<label for="radio1">a</label><input type="radio" id="radio1">-->
+			<button class="button button-block">提交</button>
+		</div>
+	</ion-content>
+</ion-view>

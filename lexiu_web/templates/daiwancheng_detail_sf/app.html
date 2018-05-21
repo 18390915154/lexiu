@@ -1,0 +1,27 @@
+<ion-view view-title="订单详情" class="donedetail_sf">
+	<ion-content>
+			<ion-item class="list">
+				<ion-item class="item item-avatar item-icon-right done_card one">
+					<img src="https://www.lerlex.com/{{order1.avatar}}">
+					<span>{{order.username}}</span>
+					<a href="tel:{{order.userphone}}"><i class="icon bar-phone phone"></i></a>
+				</ion-item>
+				<ion-item class="item item-icon-left">
+					<i class="icon ion-ios-clock  balanced"></i>
+					{{order.formatstart}}
+				</ion-item>
+				<ion-item class="item item-icon-left">
+					<i class="icon ion-location"></i>
+					{{order.address}}
+				</ion-item>
+			</ion-item>
+			<div class="item item-borderless words">
+				<i class="icon ion-volume-high liuyan"></i>
+				<button class="button button-outline button-stable" ng-click="play(price)">单击听取留言</button>
+			</div>
+			<div class="item btn1">
+				<!--ui-sref="workorder_sf({orderid:{{order.orderid}}})"-->
+				<button class="button button-block submit" ng-click="knot()" ng-disabed="plays" >{{time}}</button>
+			</div>
+	<ion-content>
+</ion-view>

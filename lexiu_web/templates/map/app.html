@@ -1,0 +1,116 @@
+
+<ion-view hide-nav-bar="true">
+	<div id="allmap" ng-app="myapp" hide-nav-bar="true"></div>
+	<div class="Map">
+		<div id="r-result" style="position: absolute;bottom:5%;left: 5%;height:50px;width: 90%;">
+			<input id="cityName" type="text" style="width:100%; margin-right:10px;height: 50px;border-radius: 5px;border: none;line-height: 50px;padding-left: 2vw;font-size: 1.2rem;" placeholder="请输入您的地址" ng-click="map1()"/>
+		</div>
+		<!---------------------------->
+
+		<div class="topMap">
+			<div class="map_top">
+				<a class="quxiao" ui-sref="tabs.home">取消</a>
+				<div class="dian"><img src="images/dg.png"><span>电工</span></div>
+				<div class="guandao"><img src="images/gdg.png" ><span>管道工</span></div>
+				<div class="kongtiao"><img src="images/ktg.png" ><span>空调工</span></div>
+			</div>
+			<div class="dian_detail">
+				<div class="putong">电工</div>
+				<div class="zishen">资深电工</div>
+			</div>
+			<div class="guandao_detail"></div>
+		</div>
+	</div>
+	<div class="map1">
+		<div class="item search">
+			<input type="text" placeholder="请输入您的地址" id="suggestId" size="20" ng-model="new_address" ng-change="address_change()">
+			<button class="button" ng-click="Map()">取消</button>
+		</div>
+		<div class="list" >
+			<div class="item item-icon-left item-icon-right" >
+				<i class="icon ion-location"></i>
+				<p id="comment_address" ng-click="map3();send_btn1()">{{use_address}}</p>
+				<i class="icon ion-chevron-right" ng-click="jump_address()"></i>
+			</div>
+			<!--<div class="item" ng-click="map3();send_btn()"  >dsdsds</div>-->
+		</div>
+		<div class="list" style="position: absolute;top: 20%;overflow-y: scroll;height:37%;">
+			<div class="item" ng-click="map3();send_btn()" ng-repeat="product in products"  style="padding: 9px 16px">{{product.address}}</div>
+		</div>
+		<!--<div class="item" style="padding: 9px 16px;text-align: center;position: absolute;top:57%;left: 2%;width: 96%;border: none;" ng-click="clear()">清除记录</div>-->
+	</div>
+
+	<div class="map3">
+		<button class="button button-block" ng-click="Map()">取消预订</button>
+		<input type="text" ng-click="map1()" ng-model="new_address">
+		<div class="search" ng-click="map4()">寻找</div>
+	</div>
+	<div class="map4">
+		<button class="button button-block" ng-click="cancelOrder()">取消预订</button>
+		<input type="text" placeholder="杭州市西湖区" ng-click="map1()" ng-model="new_address"  ng-disabled="true">
+		<div class="tk">
+			<div class="icon">
+				<i class="fa "><img src="images/gou.png" style="width: 100%;height: 100%;"></i>
+			</div>
+			<span>已成功找到师傅</span>
+		</div>
+	</div>
+	<div class="map5">
+		<div class="btn">
+			<div class="btn1" ui-sref="tabs.home">返回首页</div>
+			<div class="btn2" ng-click="cancelOrder1()">取消订单</div>
+		</div>
+		<div class="message">
+			<div class="person">
+				<div class="img"><img src="{{avatar}}"> </div>
+				<div class="info">
+					<div class="name">
+						<p>{{nickname}}</p>
+						<p>{{distance}}</p>
+					</div>
+					<div class="comment">{{skill}}</div>
+				</div>
+				<a class="icon" href="tel:{{userphone}}"><img src="images/phone.png"> </a>
+			</div>
+			<div class="voice" class="voice-btn" on-hold="rec_voice()" on-release="endrec_voice()" ng-show="!isOk2">
+				<i class="icon ion-mic-a"></i> 按住说话<ion-spinner icon="spiral" ng-show="isrec" style="margin-left: 12px;"></ion-spinner>
+				<!--<div class="icon" onclick="stopRecord()"><i class="icon ion-mic-a"></i> 停止说话</div>-->
+			</div>
+		</div>
+	</div>
+	<div class="cancelOrder">
+		<ion-header-bar class="">
+			<i class="icon ion-chevron-left"ng-click="save()"></i>
+			<div class="title">取消原因</div>
+		</ion-header-bar>
+		<div class="list lists">
+			<h1>请告诉我们取消原因</h1>
+			<p>我们会努力为您提供更好的服务</p>
+			<ion-item class="item">临时有事，下次再说吧</ion-item>
+			<ion-item class="item">等待时间过长</ion-item>
+			<ion-item class="item">联系不上师傅</ion-item>
+			<ion-item class="item">师傅以各种理由不来处理</ion-item>
+			<ion-item class="item">师傅服务态度恶劣</ion-item>
+			<ion-item class="item">价格太高</ion-item>
+			<ion-item class="item"><input type="text" placeholder="其他原因请输入" ng-model="$parent.other_reason"> </ion-item>
+		</div>
+		<button class="button button-block" ng-click="submit_reason()">取消预订</button>
+		<button class="button button-block" ng-click="save()">点错了</button>
+	</div>
+	<div class="revise_address">
+		<ion-header-bar>
+			<i class="icon ion-chevron-left" ng-click="map1()"></i>
+			<div class="title">修改常用地址</div>
+		</ion-header-bar>
+		<div class="item" style="margin-top: 9vh">
+			<input type="text" placeholder="修改常用地址" ng-model="$parent.address">
+		</div>
+		<button class="button button-block" ng-click="address_submit()">提交</button>
+	</div>
+	<!--<div style="display: none;">
+		<form id="forms" enctype="multipart/form-data" novalidate="novalidate" method="post">
+			<input type="file" id="voice" value="" name="voice">
+			<input type="text" id="orderid" value="" name="orderid">
+		</form>
+	</div>-->
+</ion-view>

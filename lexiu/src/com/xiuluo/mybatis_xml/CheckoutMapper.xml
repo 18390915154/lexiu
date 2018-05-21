@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.xiuluo.dao.aboutUs.CheckoutMapper" >
+  <resultMap id="BaseResultMap" type="com.xiuluo.model.aboutUs.Checkout" >
+    <id column="checkoutid" property="checkoutid" jdbcType="INTEGER" />
+    <result column="name" property="name" jdbcType="VARCHAR" />
+    <result column="type" property="type" jdbcType="SMALLINT" />
+    <result column="number" property="number" jdbcType="DOUBLE" />
+    <result column="addtime" property="addtime" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    checkoutid, name, type, number, addtime
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from t_checkout
+    where checkoutid = #{checkoutid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from t_checkout
+    where checkoutid = #{checkoutid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.xiuluo.model.aboutUs.Checkout" >
+    insert into t_checkout (checkoutid, name, type, 
+      number, addtime)
+    values (#{checkoutid,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{type,jdbcType=SMALLINT}, 
+      #{number,jdbcType=DOUBLE}, #{addtime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.xiuluo.model.aboutUs.Checkout" >
+    insert into t_checkout
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="checkoutid != null" >
+        checkoutid,
+      </if>
+      <if test="name != null" >
+        name,
+      </if>
+      <if test="type != null" >
+        type,
+      </if>
+      <if test="number != null" >
+        number,
+      </if>
+      <if test="addtime != null" >
+        addtime,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="checkoutid != null" >
+        #{checkoutid,jdbcType=INTEGER},
+      </if>
+      <if test="name != null" >
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="type != null" >
+        #{type,jdbcType=SMALLINT},
+      </if>
+      <if test="number != null" >
+        #{number,jdbcType=DOUBLE},
+      </if>
+      <if test="addtime != null" >
+        #{addtime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.xiuluo.model.aboutUs.Checkout" >
+    update t_checkout
+    <set >
+      <if test="name != null" >
+        name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="type != null" >
+        type = #{type,jdbcType=SMALLINT},
+      </if>
+      <if test="number != null" >
+        number = #{number,jdbcType=DOUBLE},
+      </if>
+      <if test="addtime != null" >
+        addtime = #{addtime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where checkoutid = #{checkoutid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.xiuluo.model.aboutUs.Checkout" >
+    update t_checkout
+    set name = #{name,jdbcType=VARCHAR},
+      type = #{type,jdbcType=SMALLINT},
+      number = #{number,jdbcType=DOUBLE},
+      addtime = #{addtime,jdbcType=TIMESTAMP}
+    where checkoutid = #{checkoutid,jdbcType=INTEGER}
+  </update>
+  
+   <select id="selectByType" resultMap="BaseResultMap">
+    select *
+    from t_checkout
+    where type = #{type}
+  </select>
+   <select id="selectAll" resultMap="BaseResultMap">
+    select *
+    from t_checkout
+  </select>
+</mapper>

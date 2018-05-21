@@ -1,0 +1,16 @@
+<ion-view view-title="修改密码">
+	<ion-content class="setting_entry">
+		<div class="list">
+			<label class="item item-input">
+				<input type="text" placeholder="请输入绑定的手机号即账号"  ng-model="$parent.user">
+			</label>
+			<div class="item item-input-inset">
+				<label class="item-input-wrapper">
+					<input type="text" placeholder="输入短信验证码"  ng-model="$parent.code">
+				</label>
+				<button class="button button-small " ng-click="get()" ng-disabled="spot">{{time}}</button>
+			</div>
+		</div>
+		<button class="button button-block btn1" ng-click="next()">下一步</button>
+	</ion-content>
+</ion-view>

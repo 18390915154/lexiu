@@ -1,0 +1,43 @@
+<ion-view view-title="评价">
+	<ion-content class="comment">
+		<div class="comment_inner">
+			<div class="content">
+				<div class="img">
+					<img src="{{avatar}}">
+				</div>
+				<div class="words">
+					<h2>{{worker.nickname}}</h2>
+					<div class="all" >
+						<a href="javascript:;" ng-repeat="newArrays in newArray">
+							<i class="icon {{newArrays.icon}} energized"></i>
+						</a>
+						<div class="number">{{grade}}</div>
+					</div>
+				</div>
+			</div>
+			<div class="order">订单详情</div>
+			<span>服务内容:{{order.fault}}</span>
+			<span>{{order.formatstart}}</span>
+			<div class="spot" ng-repeat="item in stars">
+				<a href="javascript:;" ng-repeat="star in item.content">
+					<i class="icon {{star.icon}} energized" ng-click="setRating(item.id, star.value)"></i>
+				</a>
+			</div>
+			<div class="row">
+				<div class="col">很有耐心</div>
+				<div class="col">很有责任</div>
+				<div class="col">很有水平</div>
+			</div>
+			<div class="row row2">
+				<div class="col">很有效率</div>
+				<div class="col">很有礼貌</div>
+				<div class="col">很有能力</div>
+			</div>
+			</ion-list>
+			<textarea ng-model="$parent.nav" class="nav" maxlength="50" ></textarea>
+		</div>
+		<div class="item btn1">
+			<button class="button button-block" ng-click="sub()">提交</button>
+		</div>
+	</ion-content>
+</ion-view>

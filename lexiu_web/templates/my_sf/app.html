@@ -1,0 +1,37 @@
+<ion-view hide-nav-bar="true" class="person">
+	<ion-content>
+		<div class="has-header header">
+			<h1>我的</h1>
+			<div class="pic" ng-click="goto()"><img src="{{img}}"> </div>
+			<p ng-click="login()">{{name}}</p>
+		</div>
+		<div class="list">
+			<div class="item item-avatar item-icon-left item-icon-right" ui-sref="wallet_sf">
+				<i class="icon bar-wallet"></i>
+				<h2>我的钱包</h2>
+				<i class="icon ion-chevron-right"></i>
+			</div>
+			<div class="item item-avatar item-icon-left item-icon-right" ui-sref="comment1_sf">
+				<i class="icon bar-comment"></i>
+				<h2>我的评价</h2>
+				<i class="icon ion-chevron-right"></i>
+			</div>
+			<div class="item item-avatar item-icon-left item-icon-right" ui-sref="integral_sf">
+				<i class="icon bar-jf"></i>
+				<h2>我的积分</h2>
+				<i class="icon ion-chevron-right"></i>
+			</div>
+			<div class="item item-avatar item-icon-left item-icon-right" ui-sref="share">
+				<i class="icon bar-share"></i>
+				<h2>分享给朋友</h2>
+				<i class="icon ion-chevron-right"></i>
+			</div>
+			<div class="item item-avatar item-icon-left item-icon-right" ui-sref="setting_sf">
+				<i class="icon bar-setting"></i>
+				<h2>设置</h2>
+				<i class="icon ion-chevron-right" ></i>
+			</div>
+		</div>
+
+	</ion-content>
+</ion-view>
